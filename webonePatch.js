@@ -8,7 +8,7 @@
 //     http://csunas.org/web
 //
 // If you'd like to contribue to this project and add a new feature, send a pull request here:
-//     https://github.com/allejo/WebOnePatch
+//     https://github.com/allejo/Droopy
 //
 // License: MIT
 //
