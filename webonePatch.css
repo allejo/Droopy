@@ -1,0 +1,19 @@
+.pane-page-elements h1 {
+    margin-bottom: 0;
+}
+
+.comment_forbidden.first.last:empty {
+    display: none;
+}
+
+.layout-csun--sidebar-left.sidebar .panel-separator:nth-last-child(2) {
+    display: none;
+}
+
+.layout-csun--sidebar-left.sidebar .pane-bundle-side-block:last-child {
+    display: none;
+}
+
+.sidebar .pane-menu-tree h2.pane-title {
+	padding-bottom: 0;
+}
