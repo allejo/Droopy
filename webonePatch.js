@@ -63,6 +63,9 @@ String.prototype.replaceAll = function(str1, str2, ignore)
 
 jQuery(document).ready(function()
 {
+    // Used to add an overriding CSS class so the disappearing submenu does not disappear
+    jQuery(".sidebar .menu .menu").attr("style", "display: block !important");
+
     accordions = jQuery("div[id=accordion]");
 
     // If there is an accordion available on the page, then we'll get working
