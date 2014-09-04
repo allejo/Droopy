@@ -34,9 +34,9 @@ var accordions;
  * Move the accordion to another place on the page, typically after a specific node since all the accordions
  * just seem to cluster up in one div.
  *
- * @param {number} accordionNumber  The number of the accordion relative to the page; the 1st, 2nd, 3rd accordion
+ * @param {Number} accordionNumber  The number of the accordion relative to the page; the 1st, 2nd, 3rd accordion
  *                                  on the page. Like all arrays, start the count at 0.
- * @param {number} nodeNumber       The unique node ID used by Web One to give each element a class
+ * @param {Number} nodeNumber       The unique node ID used by Web One to give each element a class
  */
 function moveAccordion(accordionNumber, nodeNumber)
 {
@@ -47,6 +47,103 @@ function moveAccordion(accordionNumber, nodeNumber)
     {
         accordions.eq(accordionNumber).insertAfter(node);
     }
+}
+
+/**
+ * Get the file name from a URL
+ *
+ * @param {String} url  The URL to get the file name from
+ *
+ * @returns {String}
+ */
+function getFileNameFromURL(url)
+{
+    return url.substring(url.lastIndexOf('/') + 1);
+}
+
+/**
+ * Get the unique ID given to each deparment automatically by Drupal
+ *
+ * @returns {Number} The unique ID for each department. Returns -1 if it can't be found
+ */
+function getWebOneGID()
+{
+    if (Drupal)
+    {
+        return Drupal.settings.ogContext.gid;
+    }
+
+    return -1;
+}
+
+/**
+ * Get the URL to the Droopy CSS file
+ *
+ * @returns {String} Returns the URL for the Droopy.css file
+ */
+function getDroopyCSS()
+{
+    for (var i = 0; i < document.styleSheets.length; i++)
+    {
+        var currentCSS = document.styleSheets[i].href;
+
+        if (getFileNameFromURL(currentCSS) == "Droopy.css")
+        {
+            return currentCSS;
+        }
+    }
+
+    return "";
+}
+
+/**
+ * Check all of the stylesheets that are loaded and return whether or not the Droopy.css stylesheet is loaded
+ *
+ * @returns {Boolean} Returns true if the Droopy.css file is loaded
+ */
+function isDroopyCSSLoaded()
+{
+    return (getDroopyCSS() != "");
+}
+
+/**
+ * Insert an iframe calendar to better support WebOne's calendar
+ */
+function droopyCalendar(elementID)
+{
+    var cal_iframe = jQuery(elementID);
+    var webOneCalendarURL = "http://www.csun.edu/calendar-events/month/" + getWebOneGID();
+
+    cal_iframe.css("visibility", "hidden");
+
+    var cssLink  = document.createElement("link")
+    cssLink.href = getDroopyCSS();
+    cssLink.rel  = "stylesheet";
+    cssLink.type = "text/css";
+
+    cal_iframe.contents().find(".field-content a").each(function() {
+        jQuery(this).attr("target", "_parent")
+    });
+
+    cal_iframe.contents().find('input[type="button"').click(function() {
+        cal_iframe.css("visibility", "hidden");
+    });
+
+    cal_iframe.contents().find("a").click(function() {
+        cal_iframe.css("visibility", "hidden");
+    });
+
+    cal_iframe.contents().find("head")[0].appendChild(cssLink);
+    cal_iframe.contents().find(".pane-calendar-events-og-panel-pane-1").attr("id", "calendar");
+    cal_iframe.contents().find(".layout-csun")[0].remove();
+    cal_iframe.contents().find(".layout-csun--navbar").remove();
+    cal_iframe.contents().find(".layout-csun--footer").remove();
+    cal_iframe.contents().find("#toolbar").remove();
+    cal_iframe.contents().find("#content").children().not(":last").remove();
+
+    cal_iframe.height(cal_iframe.contents().find("body").outerHeight());
+
+    cal_iframe.css("visibility", "visible");
 }
 
 /**
@@ -63,10 +160,11 @@ String.prototype.replaceAll = function(str1, str2, ignore)
 
 jQuery(document).ready(function()
 {
-    // Used to add an overriding CSS class so the disappearing submenu does not disappear
-    jQuery(".sidebar .menu .menu").attr("style", "display: block !important");
-
     accordions = jQuery("div[id=accordion]");
+
+    moveAccordion(1, 49376); // Fix: /as/agendas-and-minutes
+    moveAccordion(1, 59236); // Fix: /as/outdoor-adventures/trips
+    moveAccordion(1, 74201); // Fix: /as/marketing
 
     // If there is an accordion available on the page, then we'll get working
     if (jQuery("#accordion").length)
