@@ -162,10 +162,6 @@ jQuery(document).ready(function()
 {
     accordions = jQuery("div[id=accordion]");
 
-    moveAccordion(1, 49376); // Fix: /as/agendas-and-minutes
-    moveAccordion(1, 59236); // Fix: /as/outdoor-adventures/trips
-    moveAccordion(1, 74201); // Fix: /as/marketing
-
     // If there is an accordion available on the page, then we'll get working
     if (jQuery("#accordion").length)
     {
