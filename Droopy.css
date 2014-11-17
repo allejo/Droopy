@@ -1,11 +1,6 @@
-.pane-page-elements h1 {
-    margin-bottom: 0;
-}
-
-.comment_forbidden.first.last:empty {
-    display: none;
-}
-
+/**
+ * CSS Rules to hide the Droopy CSS/JS block that's injecting this code
+ */
 .layout-csun--sidebar-left.sidebar .panel-separator:nth-last-child(2) {
     display: none;
 }
@@ -14,19 +9,16 @@
     display: none;
 }
 
-.sidebar .menu .menu {
-    display: block !important;
+/**
+ * CSS rules to fix random issues
+ */
+
+/* Reduce the margin for the page headers to be acceptable */
+.pane-page-elements h1 {
+    margin-bottom: 0;
 }
 
+/* Reduce the margin for the sidebar headers to be acceptable */
 .sidebar .pane-menu-tree h2.pane-title {
     padding-bottom: 0;
-}
-
-@media only screen and (max-width:950px) {
-    tr td {
-        float: none;
-        clear: none;
-        border-right: 1px solid #ccc;
-        border-left: 1px solid #ccc;
-    }
 }
