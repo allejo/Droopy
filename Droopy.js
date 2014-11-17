@@ -18,36 +18,10 @@
 /// Global Variables
 ///
 
-/**
- * For both efficiency and for support of multiple accordions, we need to save the initial order of the accordions
- * when the page loads. We store the original order of the accordions so when we start moving all of them around,
- * then we won't accidentally move the same one multiple times.
- */
-var accordions;
-
 
 ///
 /// Code
 ///
-
-/**
- * Move the accordion to another place on the page, typically after a specific node since all the accordions
- * just seem to cluster up in one div.
- *
- * @param {Number} accordionNumber  The number of the accordion relative to the page; the 1st, 2nd, 3rd accordion
- *                                  on the page. Like all arrays, start the count at 0.
- * @param {Number} nodeNumber       The unique node ID used by Web One to give each element a class
- */
-function moveAccordion(accordionNumber, nodeNumber)
-{
-    // The node the accordion will be appended to
-    var node = jQuery(".node-" + nodeNumber);
-
-    if (node.length) // Only move the accordion if the node exists on this page
-    {
-        accordions.eq(accordionNumber).insertAfter(node);
-    }
-}
 
 /**
  * Get the file name from a URL
@@ -160,8 +134,6 @@ String.prototype.replaceAll = function(str1, str2, ignore)
 
 jQuery(document).ready(function()
 {
-    accordions = jQuery("div[id=accordion]");
-
     // If there is an accordion available on the page, then we'll get working
     if (jQuery("#accordion").length)
     {
