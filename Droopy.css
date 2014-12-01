@@ -22,3 +22,7 @@
 .sidebar .pane-menu-tree h2.pane-title {
     padding-bottom: 0;
 }
+
+.pane-node .pane-title:nth-child(n+1) {
+    margin: 1em 0 0.5em;
+}
