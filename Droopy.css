@@ -13,11 +13,6 @@
  * CSS rules to fix random issues
  */
 
-/* Reduce the margin for the page headers to be acceptable */
-.pane-page-elements h1 {
-    margin-bottom: 0;
-}
-
 /* Reduce the margin for the sidebar headers to be acceptable */
 .sidebar .pane-menu-tree h2.pane-title {
     padding-bottom: 0;
