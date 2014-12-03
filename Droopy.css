@@ -13,23 +13,46 @@
  * CSS rules to fix random issues
  */
 
+.pane-node .pane-title:nth-child(n+1) {
+    margin: 1em 0 0.5em;
+}
+
 .sidebar .panel-pane.pane-menu-tree {
     padding: 0;
 }
 
 .sidebar .panel-pane.pane-menu-tree h2.pane-title {
-    padding: 0 12px;
+    padding: 0 15px;
 }
 
-.sidebar .panel-pane.pane-menu-tree .menu li a {
+.sidebar .panel-pane.pane-menu-tree .menu-block-wrapper > .menu li a {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
     line-height: 1.4em;
-    padding: 10px 12px;
+    margin: 0 !important;
+    padding: 10px 15px !important;
 }
 
-.pane-node .pane-title:nth-child(n+1) {
-    margin: 1em 0 0.5em;
+.sidebar .panel-pane.pane-menu-tree .menu-block-wrapper > .menu > li:last-child a {
+    border-bottom: 0;
+}
+
+.sidebar .panel-pane.pane-menu-tree .menu-block-wrapper > .menu li > .menu li {
+    padding: 0;
+}
+
+.sidebar .panel-pane.pane-menu-tree .menu-block-wrapper > .menu li > .menu li a {
+    padding: 10px 30px !important;
+}
+
+@media only screen and (max-width: 60em) {
+    .nav-dropdown__container.nav-dropdown__links {
+        margin-bottom: 20px;
+    }
+
+    .layout-csun--navbar {
+        display: none;
+    }
 }
