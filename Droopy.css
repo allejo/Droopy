@@ -13,9 +13,21 @@
  * CSS rules to fix random issues
  */
 
-/* Reduce the margin for the sidebar headers to be acceptable */
-.sidebar .pane-menu-tree h2.pane-title {
-    padding-bottom: 0;
+.sidebar .panel-pane.pane-menu-tree {
+    padding: 0;
+}
+
+.sidebar .panel-pane.pane-menu-tree h2.pane-title {
+    padding: 0 12px;
+}
+
+.sidebar .panel-pane.pane-menu-tree .menu li a {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    line-height: 1.4em;
+    padding: 10px 12px;
 }
 
 .pane-node .pane-title:nth-child(n+1) {
