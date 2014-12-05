@@ -20,8 +20,6 @@ Features
 
 - [Jump to Accordion](#jump-to-accordion)
 
-- [Multiple Accordions](#multiple-accordions)
-
 ### Jump to Accordion
 ---
 This feature allows you to send someone directly to an accordion tab and have the accordion tab open automatically when the page loads.
@@ -69,15 +67,3 @@ On the Associated Students [administration](http://www.csun.edu/as/administratio
 URL
 
     http://www.csun.edu/as/administration#Business-Card-Order-Form
-    
-
-### Multiple Accordions
----
-
-##### Details
-
-Difficulty: Medium
-
-#### Demo
-
-You can view an example of multiple multibodies living on the same page happily ever after on the [Agenda and Minutes page](http://www.csun.edu/as/agendas-and-minutes) on the Associated Students website.
