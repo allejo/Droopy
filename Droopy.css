@@ -47,6 +47,25 @@
     padding: 10px 30px !important;
 }
 
+/**
+ * Fix Droopy calendar CSS
+ */
+
+.date-heading h2 {
+    margin: 20px 0 !important;
+}
+
+.date-box {
+    border-bottom: 0 !important;
+}
+
+.pager .date-prev {
+    top: 0;
+}
+
+/**
+ * Fix mobile tablets with weird navigation bar
+ */
 @media only screen and (max-width: 60em) {
     .nav-dropdown__container.nav-dropdown__links {
         margin-bottom: 20px;

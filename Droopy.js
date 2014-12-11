@@ -19,9 +19,24 @@
 ///
 
 
+
 ///
 /// Code
 ///
+
+/**
+ * Fetch a remote calendar and store it inside of the specified div
+ *
+ * @param {string} url The URL to fetch the calendar from
+ * @oaram {jQuery} obj The jQuery object of where to store the fetched calendar
+ */
+function _fetchCalendar(url, obj) {
+    jQuery.get(url, function (data) {
+        var ajaxCalendar = jQuery("<div />").html(data).find(".view-id-calendar_events_og");
+
+        obj.html(ajaxCalendar);
+    });
+}
 
 /**
  * Get the file name from a URL
@@ -81,43 +96,21 @@ function isDroopyCSSLoaded()
 }
 
 /**
- * Insert an iframe calendar to better support WebOne's calendar
+ * Initialize a Droopy Calendar instance
+ *
+ * @param {string} id The ID of the object that will be storing the calendar
  */
-function droopyCalendar(elementID)
-{
-    var cal_iframe = jQuery(elementID);
-    var webOneCalendarURL = "http://www.csun.edu/calendar-events/month/" + getWebOneGID();
+function initDroopyCalendar(id) {
+    var droopyCalendar = jQuery(id);
+    var calendarURL = "http://www.csun.edu/calendar-events/month/" + getWebOneGID();
 
-    cal_iframe.css("visibility", "hidden");
+    _fetchCalendar(calendarURL, droopyCalendar);
 
-    var cssLink  = document.createElement("link")
-    cssLink.href = getDroopyCSS();
-    cssLink.rel  = "stylesheet";
-    cssLink.type = "text/css";
+    jQuery(".pager a").live("click", function (event) {
+        event.preventDefault();
 
-    cal_iframe.contents().find(".field-content a").each(function() {
-        jQuery(this).attr("target", "_parent")
+        _fetchCalendar(jQuery(this).attr("href"), droopyCalendar);
     });
-
-    cal_iframe.contents().find('input[type="button"').click(function() {
-        cal_iframe.css("visibility", "hidden");
-    });
-
-    cal_iframe.contents().find("a").click(function() {
-        cal_iframe.css("visibility", "hidden");
-    });
-
-    cal_iframe.contents().find("head")[0].appendChild(cssLink);
-    cal_iframe.contents().find(".pane-calendar-events-og-panel-pane-1").attr("id", "calendar");
-    cal_iframe.contents().find(".layout-csun")[0].remove();
-    cal_iframe.contents().find(".layout-csun--navbar").remove();
-    cal_iframe.contents().find(".layout-csun--footer").remove();
-    cal_iframe.contents().find("#toolbar").remove();
-    cal_iframe.contents().find("#content").children().not(":last").remove();
-
-    cal_iframe.height(cal_iframe.contents().find("body").outerHeight());
-
-    cal_iframe.css("visibility", "visible");
 }
 
 /**
@@ -176,4 +169,6 @@ jQuery(document).ready(function()
             }
         }
     }
+
+    initDroopyCalendar("#droopyCalendar");
 });
