@@ -3,8 +3,6 @@ Droopy
 
 Welcome to Droopy. This is project solely exists for fixing WebOne, a Drupal fork used by CSUN, issues and adding new features to it.
 
-_More documentation and pictures are to come soon..._
-
 Installation
 ------------
 
