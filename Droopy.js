@@ -100,17 +100,21 @@ function isDroopyCSSLoaded()
  *
  * @param {string} id The ID of the object that will be storing the calendar
  */
-function initDroopyCalendar(id) {
-    var droopyCalendar = jQuery(id);
-    var calendarURL = "http://www.csun.edu/calendar-events/month/" + getWebOneGID();
+function initDroopyCalendar(id)
+{
+    if (jQuery(id).length != 0)
+    {
+        var droopyCalendar = jQuery(id);
+        var calendarURL = "http://www.csun.edu/calendar-events/month/" + getWebOneGID();
 
-    _fetchCalendar(calendarURL, droopyCalendar);
+        _fetchCalendar(calendarURL, droopyCalendar);
 
-    jQuery(".pager a").live("click", function (event) {
-        event.preventDefault();
+        jQuery(".pager a").live("click", function (event) {
+            event.preventDefault();
 
-        _fetchCalendar(jQuery(this).attr("href"), droopyCalendar);
-    });
+            _fetchCalendar(jQuery(this).attr("href"), droopyCalendar);
+        });
+    }
 }
 
 /**
