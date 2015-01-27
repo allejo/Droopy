@@ -64,14 +64,48 @@
 }
 
 /**
- * Fix mobile tablets with weird navigation bar
+ * A mobile responsive 3x3 grid
+ */
+.droopy-3x3-grid .tile {
+    --moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    padding: 10px;
+    width: 33%;
+}
+
+/**
+ * Media queries for tablets
  */
 @media only screen and (max-width: 60em) {
+    /**
+     * A tile for a 3x3 grid
+     */
+    .droopy-3x3-grid .tile {
+        width: 50%;
+    }
+
+    /**
+     * Fix mobile tablets with weird navigation bar
+     */
     .nav-dropdown__container.nav-dropdown__links {
         margin-bottom: 20px;
     }
 
     .layout-csun--navbar {
         display: none;
+    }
+}
+
+/**
+ * Media queries for phones
+ */
+@media only screen and (max-width: 30em) {
+    /**
+     * A tile for a 3x3 grid
+     */
+    .droopy-3x3-grid .tile {
+        display: block;
+        width: 100%;
     }
 }
