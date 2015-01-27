@@ -35,7 +35,7 @@
     padding: 10px 15px !important;
 }
 
-.sidebar .panel-pane.pane-menu-tree .menu-block-wrapper > .menu li:last-child > a {
+.sidebar .panel-pane.pane-menu-tree .menu-block-wrapper > .menu > li:last-child > a {
     border-bottom: 0;
 }
 
