@@ -68,58 +68,53 @@
  */
 time.droopy-cal
 {
-  background-color: #fff;
-  border-radius: 0.6em;
-  box-shadow: 0 1px 0 #bdbdbd, 0 2px 0 #fff, 0 3px 0 #bdbdbd, 0 4px 0 #fff, 0 5px 0 #bdbdbd, 0 0 0 1px #bdbdbd;
-  font-family: "Helvetica Neue Bold", arial, helvetica, sans-serif;
-  font-size: 1em;
-  display: block;
-  height: 7em;
-  overflow: hidden;
-  margin: 2em auto;
-  position: relative;
-  width: 7em;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: rotate(0deg) skewY(0deg);
-  -webkit-transform-origin: 50% 10%;
-  transform-origin: 50% 10%;
+    background-color: #fff;
+    border-radius: 0.6em;
+    box-shadow: 0 1px 0 #bdbdbd, 0 2px 0 #fff, 0 3px 0 #bdbdbd, 0 4px 0 #fff, 0 5px 0 #bdbdbd, 0 0 0 1px #bdbdbd;
+    font-family: "Helvetica Neue Bold", arial, helvetica, sans-serif;
+    font-size: 1em;
+    display: block;
+    height: 70px;
+    overflow: hidden;
+    width: 70px;
 }
 
 time.droopy-cal *
 {
-  display: block;
-  width: 100%;
-  font-size: 1em;
-  font-style: normal;
-  font-weight: bold;
-  text-align: center;
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
 }
 
 time.droopy-cal strong
 {
-  background-color: #C30000;
-  border-bottom: 1px dashed #FF7474;
-  box-shadow: 0 2px 0 #C30000;
-  color: #fff;
-  padding: 0.4em 0;
-  position: absolute;
-  top: 0;
+    background-color: #C30000;
+    border-bottom: 1px dashed #FF7474;
+    box-shadow: 0 2px 0 #C30000;
+    color: #fff;
+    padding: 2px 0 0;
+    position: absolute;
+    top: 0;
 }
 
 time.droopy-cal em
 {
-  bottom: 0.3em;
-  color: #C30000;
-  position: absolute;
+    bottom: 0.1em;
+    color: #C30000;
+    font-size: 0.80em;
+    position: absolute;
 }
 
 time.droopy-cal span
 {
-  color: #2f2f2f;
-  font-size: 2.8em;
-  letter-spacing: -0.05em;
-  padding-top: 0.8em;
-  width: 100%;
+    color: #2f2f2f;
+    font-size: 24px;
+    letter-spacing: -0.05em;
+    padding-top: 1.2em;
+    width: 100%;
 }
 
 /**
