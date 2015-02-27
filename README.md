@@ -10,8 +10,10 @@ Installation
 
 2. Add a new block node called "CSS/JS Patch," the name is entirely subjective, to the __sidebar__ and add the following content to that block node. Be sure that when you add this node, it is the last node in the sidebar so it can automatically hide itself so there will be no whitespace.
 
-       <link rel="stylesheet" type="text/css" href="http://your.url/webonePatch.css">
-       <script src="http://your.url/webonePatch.js"></script>
+```
+<link rel="stylesheet" type="text/css" href="http://your.url/Droopy.css">
+<script src="http://your.url/Droopy.js"></script>
+```
 
 Features
 --------
