@@ -1,4 +1,6 @@
+//
 // Let's have this as a placeholder since WebOne already has a class for it
+//
 %clearfix {
     *zoom: 1;
     &:after {
@@ -185,7 +187,7 @@ time.droopy-cal {
 }
 
 //
-//Media queries for tablets
+// Media queries for tablets
 //
 @media only screen and (max-width: 60em) {
     // 
