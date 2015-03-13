@@ -1,3 +1,14 @@
+// Let's have this as a placeholder since WebOne already has a class for it
+%clearfix {
+    *zoom: 1;
+    &:after {
+        content: '';
+        display: table;
+        line-height: 0;
+        clear: both;
+    }
+}
+
 // 
 // CSS Rules to hide the Droopy CSS/JS block that's injecting this code
 // 
@@ -151,6 +162,11 @@ time.droopy-cal {
 // 
 // A mobile responsive 3x3 grid
 // 
+
+.droopy-2x2-grid,
+.droopy-3x3-grid {
+    @extend %clearfix;
+}
 
 .droopy-2x2-grid .tile {
     --moz-box-sizing: border-box;
