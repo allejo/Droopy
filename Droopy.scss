@@ -1,6 +1,4 @@
-//
 // Let's have this as a placeholder since WebOne already has a class for it
-//
 %clearfix {
     *zoom: 1;
     &:after {
@@ -8,6 +6,69 @@
         display: table;
         line-height: 0;
         clear: both;
+    }
+}
+
+// 
+// A mobile responsive 3x3 grid
+// 
+
+.droopy-2x2-grid,
+.droopy-3x3-grid {
+    @extend %clearfix;
+}
+
+.droopy-2x2-grid .tile {
+    --moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    padding: 10px;
+    width: 50%;
+}
+
+.droopy-3x3-grid .tile {
+    --moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    padding: 10px;
+    width: 33%;
+}
+
+//
+// Media queries for tablets
+//
+
+@media only screen and (max-width: 60em) {
+    // 
+    // A tile for a 3x3 grid
+    // 
+    .droopy-3x3-grid .tile {
+        width: 50%;
+    }
+
+    // 
+    // Fix mobile tablets with weird navigation bar
+    // 
+    .nav-dropdown__container.nav-dropdown__links {
+        margin-bottom: 20px;
+    }
+
+    .layout-csun--navbar {
+        display: none;
+    }
+}
+
+//
+// Media queries for phones
+//
+
+@media only screen and (max-width: 30em) {
+    // 
+    // A tile for a 3x3 grid
+    // 
+    .droopy-2x2-grid .tile, .droopy-3x3-grid .tile {
+        display: block;
+        width: 100%;
     }
 }
 
@@ -80,24 +141,36 @@
 }
 
 // 
-// Add Bootstrap-like quoteblocks since WebOne doesn't support blockquotes well
+// Add prettier quoteblocks since WebOne doesn't support blockquotes well
 // 
 
 blockquote {
-    padding: 10px 20px;
-    margin: 0 0 20px;
-    font-size: 17.5px;
-    border-left: 5px solid #eeeeee;
-    
-    p:last-child,
-    ul:last-child,
-    ol:last-child {
-        margin-bottom: 0;
+    color: #383838;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.45;
+    margin: 0.25em 0;
+    padding: 0.8em 40px 0.35em 45px !important;
+    position: relative;
+
+    &:before {
+        color: #7a7a7a;
+        content: "\201C";
+        display: inline;
+        font-size: 80px;
+        left: 0;
+        line-height: .22;
+        position: absolute;
+        vertical-align: middle;
+        top: 40px;
     }
 
+    p:first-child {
+        margin-top: 10px;
+    }
+  
     footer,
-    small,
-    .small {
+    small {
         display: block;
         font-size: 80%;
         line-height: 1.428571429;
@@ -105,8 +178,7 @@ blockquote {
     }
 
     footer:before,
-    small:before,
-    .small:before {
+    small:before {
         content: '\2014 \00A0';
     }
 }
@@ -157,67 +229,6 @@ time.droopy-cal {
         font-size: 24px;
         letter-spacing: -0.05em;
         padding-top: 1.2em;
-        width: 100%;
-    }
-}
-
-// 
-// A mobile responsive 3x3 grid
-// 
-
-.droopy-2x2-grid,
-.droopy-3x3-grid {
-    @extend %clearfix;
-}
-
-.droopy-2x2-grid .tile {
-    --moz-box-sizing: border-box;
-    box-sizing: border-box;
-    float: left;
-    padding: 10px;
-    width: 50%;
-}
-
-.droopy-3x3-grid .tile {
-    --moz-box-sizing: border-box;
-    box-sizing: border-box;
-    float: left;
-    padding: 10px;
-    width: 33%;
-}
-
-//
-// Media queries for tablets
-//
-@media only screen and (max-width: 60em) {
-    // 
-    // A tile for a 3x3 grid
-    // 
-    .droopy-3x3-grid .tile {
-        width: 50%;
-    }
-
-    // 
-    // Fix mobile tablets with weird navigation bar
-    // 
-    .nav-dropdown__container.nav-dropdown__links {
-        margin-bottom: 20px;
-    }
-
-    .layout-csun--navbar {
-        display: none;
-    }
-}
-
-//
-// Media queries for phones
-//
-@media only screen and (max-width: 30em) {
-    // 
-    // A tile for a 3x3 grid
-    // 
-    .droopy-2x2-grid .tile, .droopy-3x3-grid .tile {
-        display: block;
         width: 100%;
     }
 }
