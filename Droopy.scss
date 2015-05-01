@@ -1,3 +1,15 @@
+@mixin respond-to($device) {
+    @if ($device == phones) {
+        @media only screen and (max-width: 30em) { @content; }
+    }
+    @else if ($device == phablets) {
+        @media only screen and (max-width: 45em) { @content; }
+    }
+    @else if ($device == tablets) {
+        @media only screen and (max-width: 60em) { @content; }
+    }
+}
+
 // Let's have this as a placeholder since WebOne already has a class for it
 %clearfix {
     *zoom: 1;
@@ -9,6 +21,58 @@
     }
 }
 
+//
+// A layout for sidebar icons that works properly on mobile devices
+//
+
+.sidebar_icons {
+    @extend %clearfix;
+
+    text-align: center;
+    width: 100%;
+
+    @include respond-to(tablets) {
+        margin-top: 10px;
+    }
+
+    > div {
+        float: left;
+        width: 50%;
+
+        @include respond-to(tablets) {
+            width: 16.66%;
+        }
+
+        @include respond-to(phablets) {
+            width: 33%;
+        }
+    }
+
+    img {
+        margin: 0 !important;
+    }
+
+    p {
+        font-size: 12px;
+        margin-top: 5px;
+        text-transform: uppercase;
+    }
+}
+
+//
+// A layout for social icons
+//
+
+.social_icons {
+    text-align: center;
+
+    a:last-child {
+        img {
+            margin-right: 0 !important;
+        }
+    }
+}
+
 // 
 // A mobile responsive 3x3 grid
 // 
@@ -16,59 +80,42 @@
 .droopy-2x2-grid,
 .droopy-3x3-grid {
     @extend %clearfix;
+
+    .tile {
+        --moz-box-sizing: border-box;
+        box-sizing: border-box;
+        float: left;
+        padding: 10px;
+
+        @include respond-to(phones) {
+            display: block;
+            width: 100%;
+        }
+    }
 }
 
 .droopy-2x2-grid .tile {
-    --moz-box-sizing: border-box;
-    box-sizing: border-box;
-    float: left;
-    padding: 10px;
     width: 50%;
 }
 
 .droopy-3x3-grid .tile {
-    --moz-box-sizing: border-box;
-    box-sizing: border-box;
-    float: left;
-    padding: 10px;
     width: 33%;
-}
 
-//
-// Media queries for tablets
-//
-
-@media only screen and (max-width: 60em) {
-    // 
-    // A tile for a 3x3 grid
-    // 
-    .droopy-3x3-grid .tile {
+    @include respond-to(tablets) {
         width: 50%;
     }
+}
 
-    // 
-    // Fix mobile tablets with weird navigation bar
-    // 
+// 
+// Fix mobile tablets with weird navigation bar
+// 
+@include respond-to(tablets) {
     .nav-dropdown__container.nav-dropdown__links {
         margin-bottom: 20px;
     }
 
     .layout-csun--navbar {
         display: none;
-    }
-}
-
-//
-// Media queries for phones
-//
-
-@media only screen and (max-width: 30em) {
-    // 
-    // A tile for a 3x3 grid
-    // 
-    .droopy-2x2-grid .tile, .droopy-3x3-grid .tile {
-        display: block;
-        width: 100%;
     }
 }
 
@@ -100,7 +147,6 @@
     .menu-block-wrapper > .menu {
         li {
             a {
-                -webkit-box-sizing: border-box;
                 -moz-box-sizing: border-box;
                 box-sizing: border-box;
                 display: block;
