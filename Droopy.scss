@@ -73,9 +73,9 @@
     }
 }
 
-// 
+//
 // A mobile responsive 3x3 grid
-// 
+//
 
 .droopy-2x2-grid,
 .droopy-3x3-grid {
@@ -106,9 +106,9 @@
     }
 }
 
-// 
+//
 // Fix mobile tablets with weird navigation bar
-// 
+//
 @include respond-to(tablets) {
     .nav-dropdown__container.nav-dropdown__links {
         margin-bottom: 20px;
@@ -119,9 +119,9 @@
     }
 }
 
-// 
+//
 // CSS Rules to hide the Droopy CSS/JS block that's injecting this code
-// 
+//
 
 .layout-csun--sidebar-left.sidebar {
     .panel-separator:nth-last-child(2), .pane-bundle-side-block:last-child {
@@ -129,9 +129,9 @@
     }
 }
 
-// 
+//
 // CSS rules to fix random issues
-// 
+//
 
 .pane-node .pane-title:nth-child(n+1) {
     margin: 1em 0 0.5em;
@@ -139,7 +139,7 @@
 
 .sidebar .panel-pane.pane-menu-tree {
     padding: 0;
-    
+
     h2.pane-title {
         padding: 0 15px;
     }
@@ -170,9 +170,9 @@
     }
 }
 
-// 
+//
 // Fix Droopy calendar CSS
-// 
+//
 
 .date-heading h2 {
     margin: 20px 0 !important;
@@ -186,9 +186,9 @@
     top: 0;
 }
 
-// 
+//
 // Add prettier quoteblocks since WebOne doesn't support blockquotes well
-// 
+//
 
 blockquote {
     color: #383838;
@@ -214,7 +214,7 @@ blockquote {
     p:first-child {
         margin-top: 10px;
     }
-  
+
     footer,
     small {
         display: block;
@@ -229,9 +229,9 @@ blockquote {
     }
 }
 
-// 
+//
 // Make a calendar icon from a time element
-// 
+//
 
 time.droopy-cal {
     background-color: #fff;
@@ -276,5 +276,20 @@ time.droopy-cal {
         letter-spacing: -0.05em;
         padding-top: 1.2em;
         width: 100%;
+    }
+}
+
+//
+// Quick fix for Droopy Calendar embed
+//
+
+@media only screen and (max-width: 950px) {
+    .calendar-calendar {
+        .date-box td,
+        .single-day td,
+        thead th {
+            clear: none;
+            float: none;
+        }
     }
 }
