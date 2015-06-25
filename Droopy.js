@@ -1,6 +1,4 @@
 //
-// Welcome to WebOne's Usability Patch
-// ---
 // This patch is written and entirely maintained by AS Marketing in order to add some features and fix others
 // that WebOne is lacking. This patch is no way, shape, or form affiliated with the WebOne project.
 //
