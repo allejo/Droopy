@@ -30,9 +30,18 @@
  */
 function _fetchCalendar(url, obj) {
     jQuery.get(url, function (data) {
-        var ajaxCalendar = jQuery("<div />").html(data).find(".view-id-calendar_events_og");
+        // Create a dummy element that'll store the calendar we fetch from AJAX
+        var tempDiv = document.createElement("div");
 
-        obj.html(ajaxCalendar);
+        // Store all the content inside the dummy element
+        tempDiv.innerHTML = data;
+
+        // Create a jQuery object from it and fetch only the calendar portion
+        var $ajaxCal = jQuery(tempDiv);
+        var cal = $ajaxCal.find(".view-id-calendar_events_og");
+
+        // Save the calendar to the page
+        obj.html(cal);
     });
 }
 
