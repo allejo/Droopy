@@ -77,6 +77,18 @@
 // A mobile responsive 3x3 grid
 //
 
+.droopy-2x2-grid .tile {
+    width: 50%;
+}
+
+.droopy-3x3-grid .tile {
+    width: 33%;
+
+    @include respond-to(tablets) {
+        width: 50%;
+    }
+}
+
 .droopy-2x2-grid,
 .droopy-3x3-grid {
     @extend %clearfix;
@@ -91,18 +103,6 @@
             display: block;
             width: 100%;
         }
-    }
-}
-
-.droopy-2x2-grid .tile {
-    width: 50%;
-}
-
-.droopy-3x3-grid .tile {
-    width: 33%;
-
-    @include respond-to(tablets) {
-        width: 50%;
     }
 }
 
