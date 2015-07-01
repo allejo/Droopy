@@ -99,6 +99,11 @@
         float: left;
         padding: 10px;
 
+        img {
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
         @include respond-to(phones) {
             display: block;
             width: 100%;
