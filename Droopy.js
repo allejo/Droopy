@@ -11,22 +11,11 @@
 // License: MIT
 //
 
-
-///
-/// Global Variables
-///
-
-
-
-///
-/// Code
-///
-
 /**
  * Fetch a remote calendar and store it inside of the specified div
  *
  * @param {string} url The URL to fetch the calendar from
- * @oaram {jQuery} obj The jQuery object of where to store the fetched calendar
+ * @param {jQuery} obj The jQuery object of where to store the fetched calendar
  */
 function _fetchCalendar(url, obj) {
     jQuery.get(url, function (data) {
