@@ -74,6 +74,34 @@
 }
 
 //
+// Droopy's accordion design
+//
+
+$accordion-border: 1px #b2b2b2 solid;
+
+.droopy-accordion {
+    background-color: #f9f9f9;
+    border: $accordion-border;
+    display: block;
+    font-family: museo_sans_500, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.droopy-accordion-container {
+    margin-bottom: 1.33333em;
+
+    .droopy-accordion {
+        border-bottom: none;
+
+        &:last-child {
+            border-bottom: $accordion-border;
+        }
+    }
+}
+
+//
 // A mobile responsive 3x3 grid
 //
 
@@ -173,6 +201,10 @@
             border-bottom: 0;
         }
     }
+}
+
+.ui-accordion {
+    width: auto !important;
 }
 
 //
