@@ -1,0 +1,11 @@
+$alignments: left, center, right;
+
+@each $device in $devices {
+	@each $alignment in $alignments {
+		.droopy-text-#{$alignment}-#{$device} {
+			@include respond-to($device) {
+				text-align: $alignment;
+			}
+		}
+	}
+}

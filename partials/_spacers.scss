@@ -1,0 +1,11 @@
+$spacer: 15px;
+$spacing: padding, margin;
+$locations: top, right, bottom, left;
+
+@each $space in $spacing {
+	@each $location in $locations {
+		.droopy-#{$space}-#{$location} {
+			#{$space}-#{$location}: $spacer;
+		}
+	}
+}
