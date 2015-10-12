@@ -1,0 +1,25 @@
+$colors: (
+    "red": #D00D2D
+);
+
+a.droopy-btn {
+    color: #FFFFFF;
+}
+
+.droopy-btn {
+    border-radius: 5px;
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+
+    @each $name, $value in $colors {
+        &.droopy-btn-#{$name} {
+            background-color: $value;
+
+            &:hover {
+                background-color: darken($value, 5%);
+            }
+        }
+    }
+}
