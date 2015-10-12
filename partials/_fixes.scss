@@ -1,0 +1,99 @@
+//
+// Fix mobile tablets with weird navigation bar
+//
+@include respond-to(tablets) {
+    .nav-dropdown__container.nav-dropdown__links {
+        margin-bottom: 20px;
+    }
+
+    .layout-csun--navbar {
+        display: none;
+    }
+}
+
+//
+// CSS Rules to hide the Droopy CSS/JS block that's injecting this code
+//
+
+.layout-csun--sidebar-left.sidebar {
+    .panel-separator:nth-last-child(2), .pane-bundle-side-block:last-child {
+        display: none;
+    }
+}
+
+//
+// CSS rules to fix random issues
+//
+
+.pane-node .pane-title:nth-child(n+1) {
+    margin: 1em 0 0.5em;
+}
+
+.sidebar .panel-pane.pane-menu-tree {
+    padding: 0;
+
+    h2.pane-title {
+        padding: 0 15px;
+    }
+
+    .menu-block-wrapper > .menu {
+        li {
+            a {
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                display: block;
+                line-height: 1.4em;
+                margin: 0 !important;
+                padding: 10px 15px !important;
+            }
+
+            > .menu li {
+                padding: 0;
+
+                a {
+                    padding: 10px 30px !important;
+                }
+            }
+        }
+
+        > li:last-child > a {
+            border-bottom: 0;
+        }
+    }
+}
+
+.ui-accordion {
+    width: auto !important;
+}
+
+//
+// Fix Droopy calendar CSS
+//
+
+.date-heading h2 {
+    margin: 20px 0 !important;
+}
+
+.date-box {
+    border-bottom: 0 !important;
+}
+
+.pager .date-prev {
+    top: 0;
+}
+
+//
+// Quick fix for Droopy Calendar embed
+//
+
+@media only screen and (max-width: 950px) {
+    .calendar-calendar {
+        .date-box td,
+        .single-day td,
+        .multi-day td,
+        thead th {
+            clear: none;
+            float: none;
+        }
+    }
+}

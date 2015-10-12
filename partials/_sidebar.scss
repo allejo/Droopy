@@ -1,0 +1,51 @@
+/*
+    A layout for the sidebar quick links
+*/
+
+.sidebar_icons {
+    @extend %clearfix;
+
+    text-align: center;
+    width: 100%;
+
+    @include respond-to(tablets) {
+        margin-top: 10px;
+    }
+
+    > div {
+        float: left;
+        width: 50%;
+
+        @include respond-to(tablets) {
+            width: 16.66%;
+        }
+
+        @include respond-to(phablets) {
+            width: 33%;
+        }
+    }
+
+    img {
+        margin: 0 !important;
+    }
+
+    p {
+        font-size: 12px;
+        margin-top: 5px;
+        text-transform: uppercase;
+    }
+}
+
+/*
+    A layout for the social icons in the sidebar
+*/
+
+.social_icons {
+    text-align: center;
+
+    a:last-child {
+        img {
+            margin-right: 0 !important;
+        }
+    }
+}

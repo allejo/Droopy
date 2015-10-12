@@ -1,0 +1,52 @@
+$columnCount: 12;
+$devices: "phones", "phablets", "tablets", "desktops";
+
+.droopy-row {
+    @extend %clearfix;
+
+    width: 100%;
+
+    .tile,
+    *[class^="droopy-col"] {
+        box-sizing: border-box;
+        display: block;
+        float: left;
+        padding: 10px;
+    }
+}
+
+@each $device in $devices {
+    @for $i from 1 through $columnCount {
+        .droopy-col-#{$i}-#{$device} {
+            @include respond-to($device) {
+                width: percentage($i / $columnCount);
+            }
+        }
+    }
+}
+
+/*
+    Convenience classes
+*/
+.droopy-2x2-grid .tile {
+    @extend .droopy-col-6-desktops;
+}
+
+.droopy-3x3-grid .tile {
+    @extend .droopy-col-4-desktops;
+    @extend .droopy-col-6-tablets;
+}
+
+.droopy-2x2-grid,
+.droopy-3x3-grid {
+    @extend .droopy-row;
+
+    .tile {
+        @extend .droopy-col-12-phones;
+
+        img {
+            margin-bottom: 5px;
+            width: 100%;
+        }
+    }
+}

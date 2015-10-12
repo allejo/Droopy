@@ -1,0 +1,34 @@
+/*
+    Create an accordion similar to WebOne's
+
+    Example:
+
+        <div class="droopy-accordion-container">
+            <a class="droopy-accordion" href="#" target="_blank">First link</a>
+            <a class="droopy-accordion" href="#" target="_blank">Second link</a>
+        </div>
+*/
+
+$accordion-border: 1px #b2b2b2 solid;
+
+.droopy-accordion {
+    background-color: #f9f9f9;
+    border: $accordion-border;
+    display: block;
+    font-family: museo_sans_500, Verdana, Tahoma, "DejaVu Sans", sans-serif;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.droopy-accordion-container {
+    margin-bottom: 1.33333em;
+
+    .droopy-accordion {
+        border-bottom: none;
+
+        &:last-child {
+            border-bottom: $accordion-border;
+        }
+    }
+}
