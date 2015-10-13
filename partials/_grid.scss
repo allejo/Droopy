@@ -1,20 +1,22 @@
+%droopy-column {
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    min-height: 1px;
+    padding: 10px;
+}
+
 .droopy-row {
     @extend %clearfix;
 
     width: 100%;
-
-    .tile,
-    *[class^="droopy-col"] {
-        box-sizing: border-box;
-        display: block;
-        float: left;
-        padding: 10px;
-    }
 }
 
 @each $device in $devices {
     @for $i from 1 through $columnCount {
         .droopy-col-#{$i}-#{$device} {
+            @extend %droopy-column;
+
             @include respond-to($device) {
                 width: percentage($i / $columnCount);
             }
@@ -39,6 +41,7 @@
     @extend .droopy-row;
 
     .tile {
+        @extend %droopy-column;
         @extend .droopy-col-12-phones;
 
         img {

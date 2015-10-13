@@ -3,26 +3,18 @@
 */
 
 .sidebar_icons {
-    @extend %clearfix;
+    @extend .droopy-row;
 
     text-align: center;
-    width: 100%;
 
     @include respond-to(tablets) {
         margin-top: 10px;
     }
 
     > div {
-        float: left;
-        width: 50%;
-
-        @include respond-to(tablets) {
-            width: 16.66%;
-        }
-
-        @include respond-to(phablets) {
-            width: 33%;
-        }
+        @extend .droopy-col-6-desktops;
+        @extend .droopy-col-8-tablets;
+        @extend .droopy-col-4-phablets;
     }
 
     img {
