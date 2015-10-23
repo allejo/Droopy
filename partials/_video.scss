@@ -1,0 +1,22 @@
+// Example
+// ---
+//     <div class="droopy-video-embed">
+//         <iframe></iframe>
+//     </div>
+
+.droopy-video-embed {
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+    position: relative;
+
+    embed,
+    object,
+    iframe {
+        height: 100%;
+        left: 0;
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+}

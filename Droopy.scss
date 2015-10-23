@@ -1,16 +1,17 @@
-@import "modules/variables";
+@import 'modules/variables';
 
-@import "modules/responsive";
-@import "modules/clearfix";
+@import 'modules/responsive';
+@import 'modules/clearfix';
 
-@import "modules/media-query-setup";
-@import "partials/grid";
+@import 'modules/media-query-setup';
+@import 'partials/grid';
 
-@import "partials/fixes";
-@import "partials/accordion";
-@import "partials/alignment";
-@import "partials/blockquote";
-@import "partials/buttons";
-@import "partials/sidebar";
-@import "partials/spacers";
-@import "partials/time";
+@import 'partials/fixes';
+@import 'partials/accordion';
+@import 'partials/alignment';
+@import 'partials/blockquote';
+@import 'partials/buttons';
+@import 'partials/sidebar';
+@import 'partials/spacers';
+@import 'partials/time';
+@import 'partials/video';
