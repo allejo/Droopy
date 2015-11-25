@@ -1,14 +1,20 @@
+$gutter: 10px;
+
 %droopy-column {
     box-sizing: border-box;
     display: block;
     float: left;
     min-height: 1px;
-    padding: 10px;
+    padding: $gutter;
 }
 
 .droopy-row {
     @extend %clearfix;
 
+    margin: {
+        left: -1 * $gutter;
+        right: -1 * $gutter;
+    }
     width: 100%;
 }
 
