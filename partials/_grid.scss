@@ -27,6 +27,12 @@ $gutter: 10px;
                 width: percentage($i / $columnCount);
             }
         }
+
+        .droopy-offset-#{$i}-#{$device} {
+            @include respond-to($device) {
+                margin-left: percentage($i / $columnCount);
+            }
+        }
     }
 }
 
