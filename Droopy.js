@@ -172,7 +172,7 @@ jQuery(document).ready(function()
     }
 
     // If there is an Droopy "Calendar by Tag" element
-    jQuery(".droopy-cbt").each(function () {
+    jQuery(".droopy-ebt").each(function () {
         var $this = jQuery(this);
         var tagID = $this.data("tag");
 

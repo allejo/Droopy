@@ -10,7 +10,7 @@ Droopy is a project started and maintained by AS Marketing for experimenting wit
 
 2. Add a new block node called "CSS/JS Patch," the name is entirely subjective, to the __sidebar__ and add the following content to that block node. Be sure that when you add this node, it is the last node in the sidebar so it can automatically hide itself so there will be no whitespace.
 
-```
+```html
 <link rel="stylesheet" type="text/css" href="http://your.url/Droopy.css">
 <script src="http://your.url/Droopy.js"></script>
 ```
@@ -18,39 +18,41 @@ Droopy is a project started and maintained by AS Marketing for experimenting wit
 ## Available Features
 
 - [Droopy Calendar](#droopy-calendar)
+- [Droopy Events by Tag](#droopy-calendar-by-tag)
 - [Jump to Accordion](#jump-to-accordion)
 
 ### Droopy Calendar
+
+**Difficulty:** Easy  
+**Demo:** On the Associated Students [calendar](http://www.csun.edu/as/calendar) page, a Droopy calendar is used.
 
 Calendars in WebOne may be embedded into pages easily but when navigating from month to month, the page requires to be reloaded or navigate away from the existing page. As an alternative, Droopy provides it's own calendar which can be embedded inside of a page an will updated as if it were in an iframe.
 
 This calendar is entirely mobile responsive so it will display on mobile devices.
 
-#### Details
-
-Difficulty: Easy
-
-#### How to Use
-
 Add the following code snippet into your Full HTML page and your group's calendar will be displayed automatically; this means you will not be able to load the Associated Students calendar on the Alumni Association website.
 
-```
-<div id="droopyCalendar"></div>
+```html
+<div id="droopyCalendar" aria-live="polite" aria-relevant="additions"></div>
 ```
 
-#### Demo
 
-On the Associated Students [calendar](http://www.csun.edu/as/calendar) page, a Droopy calendar is used.
+### Droopy Events by Tag
+
+**Difficulty:** Easy  
+**Demo:** This option is used on the [Sport Clubs](http://www.csun.edu/as/sport-clubs) page to list their upcoming events.
+
+WebOne does not have a "Calendar by Tag" node that lists events containing to a specific tag. This Droopy feature looks for elements with the `.droopy-ebt` class and requires the `data-tag` with its value being the ID of the specific tag. That's it!
+
+```html
+<div class="droopy-ebt" data-tag="6546" aria-live="polite" aria-relevant="additions"></div>
+```
 
 ### Jump to Accordion
 
+**Difficulty:** Easy
+
 This feature allows you to send someone directly to an accordion tab and have the accordion tab open automatically when the page loads.
-
-#### Details
-
-Difficulty: Easy
-
-#### How to Use
 
 To create a URL to open a specific tab, you will need to get the exact name of the tab and do the following:
 
