@@ -89,7 +89,7 @@ function getDroopyCSS()
  */
 function isDroopyCSSLoaded()
 {
-    return (getDroopyCSS() != "");
+    return (getDroopyCSS() !== "");
 }
 
 /**
@@ -99,7 +99,7 @@ function isDroopyCSSLoaded()
  */
 function initDroopyCalendar(id)
 {
-    if (jQuery(id).length != 0)
+    if (jQuery(id).length !== 0)
     {
         var droopyCalendar = jQuery(id);
         var calendarURL = "http://www.csun.edu/calendar-events/month/" + getWebOneGID();

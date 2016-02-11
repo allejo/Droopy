@@ -21,6 +21,16 @@ Convenience class for creating a responsive grid of elements.
 .droopy-<2x2|3x3>-grid .tile img {}
 ```
 
+## Video Embeds
+
+Responsive YouTube videos so they don't have a set height on all platforms.
+
+```
+<div class="droopy-video-embed">
+    <iframe></iframe>
+</div>
+```
+
 ## Accordion
 
 An accordion that looks identical to WebOne's with the exception it doesn't expand. This is useful for links.
@@ -43,7 +53,7 @@ An accordion that looks identical to WebOne's with the exception it doesn't expa
 
 ## Alignment
 
-Align the text of an element based 
+Align the text of an element based
 
 ```css
 .droopy-text-<left|center|right>-<desktops|tablets|phablets|phone> {}
