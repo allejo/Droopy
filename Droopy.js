@@ -14,10 +14,11 @@
 /**
  * Fetch a remote calendar and store it inside of the specified div
  *
- * @param {string} url The URL to fetch the calendar from
- * @param {jQuery} obj The jQuery object of where to store the fetched calendar
+ * @param {string} url  The URL to fetch the calendar from
+ * @param {string} elem The element whose HTML will be extracted and injected
+ * @param {jQuery} obj  The jQuery object of where to store the fetched calendar
  */
-function _fetchCalendar(url, obj) {
+function _fetchDomObject(url, elem, obj) {
     jQuery.get(url, function (data) {
         // Create a dummy element that'll store the calendar we fetch from AJAX
         var tempDiv = document.createElement("div");
@@ -27,10 +28,10 @@ function _fetchCalendar(url, obj) {
 
         // Create a jQuery object from it and fetch only the calendar portion
         var $ajaxCal = jQuery(tempDiv);
-        var cal = $ajaxCal.find(".view-id-calendar_events_og");
+        var elemContent = $ajaxCal.find(elem);
 
-        // Save the calendar to the page
-        obj.html(cal);
+        // Save the element content to the page
+        obj.html(elemContent);
     });
 }
 
@@ -103,7 +104,7 @@ function initDroopyCalendar(id)
         var droopyCalendar = jQuery(id);
         var calendarURL = "http://www.csun.edu/calendar-events/month/" + getWebOneGID();
 
-        _fetchCalendar(calendarURL, droopyCalendar);
+        _fetchDomObject(calendarURL, ".view-id-calendar_events_og", droopyCalendar);
 
         jQuery(".pager a").live("click", function (event) {
             event.preventDefault();
@@ -169,6 +170,16 @@ jQuery(document).ready(function()
             }
         }
     }
+
+    // If there is an Droopy "Calendar by Tag" element
+    jQuery(".droopy-cbt").each(function () {
+        var $this = jQuery(this);
+        var tagID = $this.data("tag");
+
+        var tagURL = "http://www.csun.edu/events-by-term/" + getWebOneGID() + "/" + tagID;
+
+        _fetchDomObject(tagURL, ".view-content", $this);
+    });
 
     initDroopyCalendar("#droopyCalendar");
 });
