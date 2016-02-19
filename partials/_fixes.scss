@@ -36,27 +36,15 @@
         padding: 0 15px;
     }
 
-    .menu-block-wrapper > .menu {
-        li {
-            a {
-                box-sizing: border-box;
-                display: block;
-                line-height: 1.4em;
-                margin: 0 !important;
-                padding: 10px 15px !important;
-            }
+    .menu-block-wrapper li a {
+        box-sizing: border-box;
+        line-height: 1.4em;
+        margin-left: 0;
+        padding: 10px 0 10px 15px;
 
-            > .menu li {
-                padding: 0;
-    
-                a {
-                    padding: 10px 30px !important;
-                }
-            }
-        }
-
-        > li:last-child > a {
-            border-bottom: 0;
+        &:hover {
+            margin-left: 0;
+            padding-left: 15px;
         }
     }
 }
