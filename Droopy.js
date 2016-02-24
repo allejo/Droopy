@@ -109,7 +109,7 @@ function initDroopyCalendar(id)
         jQuery(".pager a").live("click", function (event) {
             event.preventDefault();
 
-            _fetchCalendar(jQuery(this).attr("href"), droopyCalendar);
+            _fetchDomObject(jQuery(this).attr("href"), droopyCalendar);
         });
     }
 }
