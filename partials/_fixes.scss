@@ -29,6 +29,22 @@
     margin: 1em 0 0.5em;
 }
 
+@mixin recursiveMenuNesting($value, $max) {
+    .menu {
+        li {
+            padding-left: 0;
+
+            a {
+                padding-left: 15px * $value;
+            }
+
+            @if $value < $max {
+                @include recursiveMenuNesting($value + 1, $max);
+            }
+        }
+    }
+}
+
 .sidebar .panel-pane.pane-menu-tree {
     padding: 0;
 
@@ -42,10 +58,15 @@
         margin-left: 0;
         padding: 10px 0 10px 15px;
 
+        &:focus,
         &:hover {
             margin-left: 0;
             padding-left: 15px;
         }
+    }
+
+    .menu {
+        @include recursiveMenuNesting(2, 5);
     }
 }
 
