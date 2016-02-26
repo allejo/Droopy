@@ -15,7 +15,6 @@ $gutter: 10px;
         left: -1 * $gutter;
         right: -1 * $gutter;
     }
-    width: 100%;
 }
 
 @each $device in $devices {
