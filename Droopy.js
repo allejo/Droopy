@@ -1,15 +1,71 @@
-//
-// This patch is written and entirely maintained by AS Marketing in order to add some features and fix others
-// that WebOne is lacking. This patch is no way, shape, or form affiliated with the WebOne project.
-//
-// If you would like to report a bug to fix concerning THIS patch, feel free to report it here:
-//     http://csunas.org/web
-//
-// If you'd like to contribue to this project and add a new feature, send a pull request here:
-//     https://github.com/allejo/Droopy
-//
-// License: MIT
-//
+///
+/// This patch is written and entirely maintained by AS Marketing in order to add some features and fix others
+/// that WebOne is lacking. This patch is no way, shape, or form affiliated with the WebOne project.
+///
+/// If you would like to report a bug to fix concerning THIS patch, feel free to report it here:
+///     http://csunas.org/web
+///
+/// If you'd like to contribue to this project and add a new feature, send a pull request here:
+///     https://github.com/allejo/Droopy
+///
+/// License: MIT
+///
+
+// Variables to store values used in the script
+var cache = {};
+
+// Global constants of useful values
+var MonthNames = ['January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
+var MonthNamesShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
+  'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+];
+
+
+/**
+ * Quick and simple HTML templating function
+ *
+ * @author John Resig <http://ejohn.org/blog/javascript-micro-templating/>
+ * 
+ * @param  {string} str  Either a template as a string or ID of the respective template
+ * @param  {object} data A JSON object with the variables that will be placed inside of the template
+ * 
+ * @return {string}      The compiled HTML
+ */
+function tmpl (str, data) {
+    /* jshint ignore:start */
+
+    // Figure out if we're getting a template, or if we need to
+    // load the template - and be sure to cache the result.
+    var fn = !/\W/.test(str) ?
+      cache[str] = cache[str] ||
+      tmpl(document.getElementById(str).innerHTML) :
+
+    // Generate a reusable function that will serve as a template
+    // generator (and which will be cached).
+    new Function("obj",
+               "var p=[],print=function(){p.push.apply(p,arguments);};" +
+
+               // Introduce the data as local variables using with(){}
+               "with(obj){p.push('" +
+
+               // Convert the template into pure JavaScript
+               str
+               .replace(/[\r\t\n]/g, " ")
+               .split("<%").join("\t")
+               .replace(/((^|%>)[^\t]*)'/g, "$1\r")
+               .replace(/\t=(.*?)%>/g, "',$1,'")
+               .split("\t").join("');")
+               .split("%>").join("p.push('")
+               .split("\r").join("\\'")
+               + "');}return p.join('');");
+
+    // Provide some basic currying to the user
+    return data ? fn( data ) : fn;
+
+    /* jshint ignore:end */
+}
 
 /**
  * Fetch a remote calendar and store it inside of the specified div
@@ -123,8 +179,8 @@ function initDroopyCalendar(id)
  */
 String.prototype.replaceAll = function(str1, str2, ignore)
 {
-    return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
-}
+    return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2); // jshint ignore:line
+};
 
 jQuery(document).ready(function()
 {
