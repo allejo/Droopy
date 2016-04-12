@@ -10,7 +10,8 @@ a.droopy-btn {
     border-radius: 5px;
     color: #FFFFFF;
     display: inline-block;
-    padding: 5px 10px;
+    line-height: 1.5;
+    padding: .375rem 1rem;
     text-decoration: none;
 
     @each $name, $value in $colors {
