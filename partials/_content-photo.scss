@@ -1,0 +1,26 @@
+.droopy-album-text--left .droopy-album-image {
+    float: left;
+    margin-right: 15px;
+}
+
+.droopy-album-text--right .droopy-album-image {
+    float: right;
+    margin-left: 15px;
+}
+
+.droopy-album-text {
+    @extend %clearfix;
+
+    .droopy-album-image {
+        @include respond-to(phablets) {
+            float: none;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}
