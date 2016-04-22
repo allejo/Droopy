@@ -11,6 +11,8 @@
 .droopy-album-text {
     @extend %clearfix;
 
+    marign: 1.3em 0;
+
     .droopy-album-image {
         @include respond-to(phablets) {
             float: none;

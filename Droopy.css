@@ -587,15 +587,16 @@ a.droopy-btn {
   float: right;
   margin-left: 15px; }
 
-@media only screen and (max-width: 45em) {
-  .droopy-album-text .droopy-album-image {
-    float: none;
-    margin-left: 0;
-    margin-right: 0; } }
-
-.droopy-album-text img {
-  display: block;
-  margin: 0 auto; }
+.droopy-album-text {
+  marign: 1.3em 0; }
+  @media only screen and (max-width: 45em) {
+    .droopy-album-text .droopy-album-image {
+      float: none;
+      margin-left: 0;
+      margin-right: 0; } }
+  .droopy-album-text img {
+    display: block;
+    margin: 0 auto; }
 
 /*
     A layout for the sidebar quick links
