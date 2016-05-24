@@ -83,11 +83,13 @@ function _fetchDomObject(url, elem, obj) {
         tempDiv.innerHTML = data;
 
         // Create a jQuery object from it and fetch only the calendar portion
-        var $ajaxCal = jQuery(tempDiv);
-        var elemContent = $ajaxCal.find(elem);
+        var $ajaxObj = jQuery(tempDiv);
+        var elemContent = $ajaxObj.find(elem);
 
-        // Save the element content to the page
-        obj.html(elemContent);
+        // Only save the retrieved content if it's not empty
+        if (elemContent.length) {
+            obj.html(elemContent);
+        }
     });
 }
 
