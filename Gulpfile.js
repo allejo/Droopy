@@ -39,12 +39,20 @@ gulp.task('sass:debug', function () {
 });
 
 gulp.task('sass:dist', function () {
-    var sass = require('gulp-sass');
+    var sass      = require('gulp-sass');
+    var cssmin    = require('gulp-cssmin');
+    var combineMq = require('gulp-combine-mq');
 
     gulp.src('sass/Droopy.scss')
         .pipe(sass({
-                outputStyle: 'compressed'
-              }).on('error', sass.logError))
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(combineMq({
+            beautify: false
+        }))
+        .pipe(cssmin({
+            processImport: false
+        }))
         .pipe(gulp.dest('./dist/'));
 });
 
