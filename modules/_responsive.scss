@@ -1,3 +1,126 @@
+/// The breakpoint sizes
+/// @type Map
+$breakpoints: (
+    'xs': 0,
+    'sm': 30em,
+    'md': 45em,
+    'lg': 60em
+);
+
+/// The intervals to for max-widths
+/// @type Map
+$breakpoint-intervals: (
+    'em': 0.01em,
+    'px': 1px
+);
+
+/// Get the last key in a map. This function will return null if the given parameter is not a map
+///
+/// @access private
+///
+/// @param {Map} $map - The target map we will be using
+///
+/// @example scss - Usage
+///   $map: (
+///     foo: 1,
+///     bar: 2,
+///     qux: 3
+///   );
+///
+///   $next-key: get-last-key($map); // "qux"
+
+@function get-last-key($map) {
+    $result: null;
+
+    @if type-of($map) != map {
+        @warn '$map must be a map';
+    }
+    @else {
+        $keys: map-keys($map);
+        $length: length($keys);
+        $result: nth($keys, $length);
+    }
+
+    @return $result;
+}
+
+/// Have the specified content inside of the mixin respond to the specified Breakpoint and larger. Use this function for
+/// a mobile first design; this mixin will make use of `min-width` in media queries.
+///
+/// @access public
+/// @content
+/// @group responsive
+///
+/// @param {Breakpoint} $media - The Breakpoint (and larger) that will have the specified CSS rules applied to
+///
+/// @example scss - Usage
+///   .phablet-and-larger {
+///       @include respond-up(sm) {
+///           display: block;
+///       }
+///   }
+///
+/// @example css - CSS Output
+///   @media only screen and (min-width: 480px) {
+///       .phablet-and-larger {
+///           display: block;
+///       }
+///   }
+
+@mixin respond-up($breakpoint) {
+    $size: map-get($breakpoints, $breakpoint);
+
+    @if $size == 0 {
+        @content;
+    }
+    @else {
+        @media only screen and (min-height: $size) {
+            @content;
+        }
+    }
+}
+
+/// Have the specified content inside of the mixin respond to the specified Breakpoint and smaller. Use this function
+/// for a desktop first design; this mixin will make use of `max-width` in media queries.
+///
+/// @access public
+/// @content
+/// @group responsive
+///
+/// @param {Breakpoint} $viewSize - The Breakpoint the media query will be applied from
+///
+/// @example scss - Usage
+///   .phablet-and-smaller {
+///       @include respond-up(sm) {
+///           display: block;
+///       }
+///   }
+///
+/// @example css - CSS Output
+///   @media only screen and (max-width: 480px) {
+///       .phablet-and-smaller {
+///           display: block;
+///       }
+///   }
+   
+@mixin respond-down($breakpoint) {
+    $lastBreakpoint: get-last-key($breakpoints);
+
+    @if $breakpoint == $lastBreakpoint {
+        @content;
+    }
+    @else {
+        $breakpoint: map-get($breakpoints, $breakpoint);
+        $breakpoint: $breakpoint - map-get($breakpoint-intervals, unit($breakpoint));
+
+        @media only screen and (max-width: $breakpoint) {
+            @content;
+        }
+    }
+}
+
+/// @deprecated Use respond-up() and respond-down() instead
+
 @mixin respond-to($device) {
     @if ($device == phones) {
         @media only screen and (max-width: 30em) { @content; }
