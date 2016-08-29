@@ -1,13 +1,32 @@
 {
   "dependencies": {
-    "grunt": "*",
-    "grunt-cli": "*",
-    "grunt-contrib-jshint": "^0.12.0",
-    "grunt-contrib-uglify": "^0.5.1",
-    "grunt-contrib-watch": "*",
-    "grunt-contrib-sass": "*",
-    "grunt-scss-lint": "^0.3.4",
-    "jshint-stylish": "^0.4.0",
-    "load-grunt-tasks": "^3.1.0"
-  }
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0"
+  },
+  "devDependencies": {
+    "gulp-jshint": "^2.0.1",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "jshint": "^2.9.3",
+    "jshint-stylish": "^2.2.1",
+    "postcss-reporter": "^1.4.1",
+    "postcss-scss": "^0.2.0",
+    "stylelint": "^7.1.0",
+    "stylelint-scss": "^1.3.4"
+  },
+  "name": "droopy",
+  "version": "1.1.0",
+  "description": "A third-party CSS/JS framework to use in conjunction with CSUN's WebOne",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allejo/Droopy.git"
+  },
+  "author": "Vladimir \"allejo\" Jimenez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/allejo/Droopy/issues"
+  },
+  "homepage": "https://github.com/allejo/Droopy"
 }

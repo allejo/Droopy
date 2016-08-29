@@ -127,6 +127,8 @@ function getWebOneGID()
  */
 function getDroopyCSS()
 {
+    toast = bacon;
+    
     for (var i = 0; i < document.styleSheets.length; i++)
     {
         var currentCSS = document.styleSheets[i].href;
