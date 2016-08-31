@@ -1,2 +1,15 @@
 $columnCount: 12;
+$gutter: 10px;
+
+/// @deprecated
+/// @type List
 $devices: "phones", "phablets", "tablets", "desktops";
+
+/// The breakpoint sizes
+/// @type Map
+$breakpoints: (
+    'xs': 0,
+    'sm': 30em,
+    'md': 45em,
+    'lg': 60em
+);

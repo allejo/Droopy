@@ -1,0 +1,38 @@
+//
+// The droopy-album-text* classes have been renamed to droopy-media-object*
+//
+
+.droopy-album-text,
+.droopy-media-object {
+    @extend %clearfix;
+
+    margin: 1.3em 0;
+
+    .droopy-album-image {
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    img {
+        border-radius: 5px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.droopy-album-text--left .droopy-album-image,
+.droopy-media-object--left .droopy-media-object-image {
+    @include respond-up(md) {
+        float: left;
+        margin-right: 15px;
+    }
+}
+
+.droopy-album-text--right .droopy-album-image,
+.droopy-media-object--right .droopy-media-object-image {
+    @include respond-up(md) {
+        float: right;
+        margin-left: 15px;
+    }
+}

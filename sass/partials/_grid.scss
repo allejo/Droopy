@@ -1,9 +1,6 @@
-$gutter: 10px;
-
 %droopy-column {
     box-sizing: border-box;
     display: block;
-    float: left;
     min-height: 1px;
     padding: $gutter;
 }
@@ -17,34 +14,35 @@ $gutter: 10px;
     }
 }
 
-@each $device in $devices {
+@each $bp in map-keys($breakpoints) {
     @for $i from 1 through $columnCount {
-        .droopy-col-#{$i}-#{$device} {
+        .droopy-col-#{$bp}-#{$i} {
             @extend %droopy-column;
 
-            @include respond-to($device) {
+            @include respond-up($bp) {
+                float: left;
                 width: percentage($i / $columnCount);
             }
         }
 
-        .droopy-offset-#{$i}-#{$device} {
-            @include respond-to($device) {
+        .droopy-offset-#{$bp}-#{$i} {
+            @include respond-up($bp) {
                 margin-left: percentage($i / $columnCount);
             }
         }
     }
 }
 
-/*
-    Convenience classes
-*/
+// 
+// Convenience classes
+// 
 .droopy-2x2-grid .tile {
-    @extend .droopy-col-6-desktops;
+    @extend .droopy-col-md-6;
 }
 
 .droopy-3x3-grid .tile {
-    @extend .droopy-col-4-desktops;
-    @extend .droopy-col-6-tablets;
+    @extend .droopy-col-lg-4;
+    @extend .droopy-col-md-6;
 }
 
 .droopy-2x2-grid,
@@ -53,7 +51,7 @@ $gutter: 10px;
 
     .tile {
         @extend %droopy-column;
-        @extend .droopy-col-12-phones;
+        @extend .droopy-col-xs-12;
 
         img {
             margin-bottom: 5px;

@@ -1,9 +1,7 @@
-$alignments: left, center, right;
-
-@each $device in $devices {
-	@each $alignment in $alignments {
-		.droopy-text-#{$alignment}-#{$device} {
-			@include respond-to($device) {
+@each $bp in map-keys($breakpoints) {
+	@each $alignment in (left, center, right) {
+		.droopy-text-#{$bp}-#{$alignment} {
+			@include respond-up($bp) {
 				text-align: $alignment;
 			}
 		}

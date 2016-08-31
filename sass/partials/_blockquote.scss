@@ -27,16 +27,14 @@ blockquote {
         margin-top: 10px;
     }
 
-    footer,
-    small {
+    footer {
         display: block;
         font-size: 80%;
         line-height: 1.428571429;
         color: #777777;
     }
 
-    footer:before,
-    small:before {
+    footer:before {
         content: '\2014 \00A0';
     }
 }

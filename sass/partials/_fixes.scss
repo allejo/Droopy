@@ -1,7 +1,7 @@
 //
 // Fix mobile tablets with weird navigation bar
 //
-@include respond-to(tablets) {
+@include respond-down(md) {
     .nav-dropdown__container.nav-dropdown__links {
         margin-bottom: 20px;
     }

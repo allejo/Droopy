@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Droopy CSS Tests</title>
+        <link rel="stylesheet" href="../dist/Droopy.css">
+        <style>
+            body {
+                font-family: sans-serif;
+            }
+
+            .container {
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            *[class^="droopy-col"] {
+                border: 1px solid #efefef;
+                box-sizing: border-box;
+            }
+
+            @media only screen and (min-width: 60em) {
+                .container {
+                    width: 992px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Droopy CSS Tests</h1>
+            <p>This page simply contains sample uses of the CSS classes available in Droopy to ensure they are working as they should.</p>
+
+            <!-- Droopy Accordion -->
+            <h2>Accordion</h2>
+
+            <p><em>Note: The font and color of the links are handled by WebOne</em></p>
+
+            <div class="droopy-accordion-container">
+                <a class="droopy-accordion" href="#" target="_blank">First link</a>
+                <a class="droopy-accordion" href="#" target="_blank">Second link</a>
+            </div>
+
+            <!-- Text Alignment Classes -->
+            <h2>Alignment</h2>
+
+            <p><em>Note: Text alignment based on the viewport</em></p>
+
+            <div>
+                <p class="droopy-text-lg-left">align left; lg</p>
+                <p class="droopy-text-lg-center">align center; lg</p>
+                <p class="droopy-text-lg-right">align right; lg</p>
+
+                <p class="droopy-text-md-left">align left; md</p>
+                <p class="droopy-text-md-center">align center; md</p>
+                <p class="droopy-text-md-right">align right; md</p>
+
+                <p class="droopy-text-sm-left">align left; sm</p>
+                <p class="droopy-text-sm-center">align center; sm</p>
+                <p class="droopy-text-sm-right">align right; sm</p>
+
+                <p class="droopy-text-xs-left">align left; xs</p>
+                <p class="droopy-text-xs-center">align center; xs</p>
+                <p class="droopy-text-xs-right">align right; xs</p>
+            </div>
+
+            <!-- Blockquote -->
+            <h2>Blockquote</h2>
+
+            <blockquote>
+                I wish I wish I was a fish
+
+                <footer>Ed '03</footer>
+            </blockquote>
+
+            <!-- Buttons -->
+            <h2>Buttons</h2>
+
+            <div class="droopy-btn droopy-btn-red">This is a button</div>
+            <a class="droopy-btn droopy-btn-red" href="#">This is a hyperlink button</a>
+
+            <!-- Grid System -->
+            <h2>Grid System</h2>
+
+            <div class="droopy-row droopy-text-xs-center">
+                <div class="droopy-col-md-6">droopy-col-md-6</div>
+                <div class="droopy-col-md-6">droopy-col-md-6</div>
+                <div class="droopy-col-sm-4">droopy-col-sm-4</div>
+                <div class="droopy-col-sm-4">droopy-col-sm-4</div>
+                <div class="droopy-col-sm-4">droopy-col-sm-4</div>
+                <div class="droopy-col-xs-3">droopy-col-xs-3</div>
+                <div class="droopy-col-xs-3">droopy-col-xs-3</div>
+                <div class="droopy-col-xs-3">droopy-col-xs-3</div>
+                <div class="droopy-col-xs-3">droopy-col-xs-3</div>
+            </div>
+
+            <!-- Media Object -->
+            <h2>Media Object</h2>
+
+            <div class="droopy-album-text droopy-album-text--left">
+                <div class="droopy-album-image">
+                    <img alt="" src="http://placehold.it/200x200">
+                </div>
+                <div class="droopy-album-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, esse! Quia dolores aperiam asperiores et. Incidunt fuga harum reprehenderit magni debitis voluptate reiciendis nisi doloremque autem, in vitae deleniti eveniet.</p>
+                </div>
+            </div>
+
+            <div class="droopy-album-text droopy-album-text--right">
+                <div class="droopy-album-image">
+                    <img alt="" src="http://placehold.it/200x200">
+                </div>
+                <div class="droopy-album-content">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, esse! Quia dolores aperiam asperiores et. Incidunt fuga harum reprehenderit magni debitis voluptate reiciendis nisi doloremque autem, in vitae deleniti eveniet.</p>
+                </div>
+            </div>
+
+            <!-- Sidebar Icons -->
+            <h2>Sidebar Icons</h2>
+
+            <div class="sidebar-icons">
+                <div>
+                    <a href="http://www.csun.edu/as/a-z">
+                        <img src="http://www.csun.edu/sites/default/files/AS-Icons-A_Z.PNG?r=2" alt="AS A-Z"></a>
+                    <p>A-Z</p>
+                </div>
+
+                <div>
+                    <a href="http://www.csun.edu/as/finance">
+                        <img src="http://www.csun.edu/sites/default/files/AS-Icons-Funding.png?r=2" alt="AS Funding"></a>
+                    <p>Funding</p>
+                </div>
+
+                <div>
+                    <a href="http://www.csun.edu/as/forms">
+                        <img src="http://www.csun.edu/sites/default/files/AS-Icons-Forms.png?r=2" alt="AS Forms"></a>
+                    <p>Forms</p>
+                </div>
+
+                <div>
+                    <a href="http://www.csun.edu/as/jobs">
+                        <img src="http://www.csun.edu/sites/default/files/AS-Icons-Jobs.png?r=2" alt="AS Jobs"></a>
+                    <p>Jobs</p>
+                </div>
+
+                <div>
+                    <a href="http://www.csun.edu/as/calendar">
+                        <img src="http://www.csun.edu/sites/default/files/AS-Icons-Calendar.png?r=2" alt="AS Calendar"></a>
+                    <p>Calendar</p>
+                </div>
+
+                <div>
+                    <a href="http://www.csun.edu/as/mind">
+                        <img src="http://www.csun.edu/sites/default/files/AS-Icons-Infodisplays.png?r=2" alt="AS MIND Screens"></a>
+                    <p>MIND</p>
+                </div>
+            </div>
+
+            <div class="social-icons">
+                <a href="http://www.facebook.com/CSUNOutdoorAdventures" target="_blank">
+                    <img src="http://www.csun.edu/sites/default/files/facebook_11.png" border="0" alt="Like us on Facebook"></a>
+                <a href="https://twitter.com/csunas" target="_blank">
+                    <img src="http://www.csun.edu/sites/default/files/twitter_5.png" border="0" alt="Follow us on Twitter"></a>
+                <a href="http://www.youtube.com/csunas" target="_blank">
+                    <img src="http://www.csun.edu/sites/default/files/youtube_3.png" border="0" alt="Suscribe to us on YouTube"></a>
+                <a href="https://www.instagram.com/csunoutdooradventures/" target="_blank">
+                    <img src="http://www.csun.edu/sites/default/files/instagam.png" border="0" alt="Instagram" title="Follow us on Instagram"></a>
+                <a href="http://www.flickr.com/photos/csunasi" target="_blank">
+                    <img src="http://www.csun.edu/sites/default/files/flickr.png" border="0" alt="Flickr" title="View our photos on Flickr"></a>
+            </div>
+
+            <!-- Time Object -->
+            <h2>Time Object</h2>
+
+            <time datetime="2015-06-04" class="droopy-cal">
+                <em>Thursday</em>
+                <strong>June</strong>
+                <span>04</span>
+            </time>
+
+            <!-- Video Embed -->
+            <h2>Video Embed</h2>
+
+            <div class="droopy-video-embed">
+                <iframe src="https://www.youtube.com/embed/ZCAnLxRvNNc" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </body>
+</html>

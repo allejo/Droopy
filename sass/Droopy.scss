@@ -3,7 +3,6 @@
 @import 'modules/responsive';
 @import 'modules/clearfix';
 
-@import 'modules/media-query-setup';
 @import 'partials/grid';
 
 @import 'partials/fixes';
@@ -11,8 +10,10 @@
 @import 'partials/alignment';
 @import 'partials/blockquote';
 @import 'partials/buttons';
-@import 'partials/content-photo';
+@import 'partials/media-object';
 @import 'partials/sidebar';
 @import 'partials/spacers';
 @import 'partials/time';
 @import 'partials/video';
+
+@import 'deprecated';

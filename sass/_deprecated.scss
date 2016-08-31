@@ -1,0 +1,29 @@
+// @todo Deprecate these classes as they have been replaced by the classes above
+
+@each $device in $devices {
+    @for $i from 1 through $columnCount {
+        .droopy-col-#{$i}-#{$device} {
+            @extend %droopy-column;
+
+            @include respond-to($device) {
+                width: percentage($i / $columnCount);
+            }
+        }
+
+        .droopy-offset-#{$i}-#{$device} {
+            @include respond-to($device) {
+                margin-left: percentage($i / $columnCount);
+            }
+        }
+    }
+}
+
+@each $device in $devices {
+    @each $alignment in (left, center, right) {
+        .droopy-text-#{$alignment}-#{$device} {
+            @include respond-to($device) {
+                text-align: $alignment;
+            }
+        }
+    }
+}
