@@ -79,4 +79,4 @@ gulp.task('watch', function() {
 
 gulp.task('default', ['sass:debug', 'watch']);
 gulp.task('travis',  ['sass:lint']);
-gulp.task('dist',    ['sass:lint', 'sass:dist', 'js:hint', 'js:minify']);
+gulp.task('dist',    ['sass:lint', 'sass:dist', 'js:lint', 'js:minify']);
