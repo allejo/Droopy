@@ -15,6 +15,10 @@
 }
 
 @each $bp in map-keys($breakpoints) {
+    .droopy-col-#{$bp} {
+        float: left;
+    }
+
     @for $i from 1 through $columnCount {
         .droopy-col-#{$bp}-#{$i} {
             @extend %droopy-column;
@@ -28,6 +32,12 @@
         .droopy-offset-#{$bp}-#{$i} {
             @include respond-up($bp) {
                 margin-left: percentage($i / $columnCount);
+            }
+        }
+
+        .droopy-reset-#{$bp} {
+            @include respond-up($bp) {
+                margin-left: 0;
             }
         }
     }
