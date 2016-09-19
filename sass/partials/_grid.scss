@@ -16,7 +16,9 @@
 
 @each $bp in map-keys($breakpoints) {
     .droopy-col-#{$bp} {
-        float: left;
+        @include respond-up($bp) {
+            float: left;
+        }
     }
 
     @for $i from 1 through $columnCount {
@@ -38,6 +40,14 @@
         .droopy-reset-#{$bp} {
             @include respond-up($bp) {
                 margin-left: 0;
+            }
+        }
+    }
+
+    @each $direction in (left, right) {
+        .droopy-pull-#{$bp}-#{$direction} {
+            @include respond-up($bp) {
+                float: $direction;
             }
         }
     }

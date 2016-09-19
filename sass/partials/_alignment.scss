@@ -15,8 +15,8 @@
 
 	.droopy-margin-#{$bp}-center  {
 		@include respond-up($bp) {
-			margin-left: 0;
-			margin-right: 0;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 
@@ -25,4 +25,18 @@
 			margin-right: 0;
 		}
 	}
+}
+
+// Convenience classes
+
+.droopy-margin-left {
+	@extend .droopy-margin-xs-left;
+}
+
+.droopy-margin-center {
+	@extend .droopy-margin-xs-center;
+}
+
+.droopy-margin-right {
+	@extend .droopy-margin-xs-right;
 }
