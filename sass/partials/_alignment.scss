@@ -1,6 +1,6 @@
 @each $bp in map-keys($breakpoints) {
 	@each $alignment in (left, center, right) {
-		.droopy-text-#{$bp}-#{$alignment} {
+		.droopy-align-#{$bp}-#{$alignment} {
 			@include respond-up($bp) {
 				text-align: $alignment;
 			}
