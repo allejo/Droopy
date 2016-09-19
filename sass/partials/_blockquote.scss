@@ -2,6 +2,8 @@
 // Add prettier quoteblocks since WebOne doesn't support blockquotes well
 //
 
+// stylelint-disable declaration-no-important
+// the !important is needed to override WebOne's styling
 blockquote {
     color: #383838;
     font-family: Georgia, serif;
@@ -11,15 +13,14 @@ blockquote {
     padding: 0.8em 40px 0.35em 45px !important;
     position: relative;
 
-    &:before {
+    &::before {
         color: #7a7a7a;
-        content: "\201C";
+        content: '\201C';
         display: inline;
         font-size: 80px;
         left: 8px;
-        line-height: .22;
+        line-height: 0.22;
         position: absolute;
-        vertical-align: middle;
         top: 40px;
     }
 
@@ -28,13 +29,13 @@ blockquote {
     }
 
     footer {
+        color: #7a7a7a;
         display: block;
         font-size: 80%;
         line-height: 1.428571429;
-        color: #777777;
     }
 
-    footer:before {
+    footer::before {
         content: '\2014 \00A0';
     }
 }

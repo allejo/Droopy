@@ -8,10 +8,8 @@
 .droopy-row {
     @extend %clearfix;
 
-    margin: {
-        left: -1 * $gutter;
-        right: -1 * $gutter;
-    }
+    margin-left: -1 * $gutter;
+    margin-right: -1 * $gutter;
 }
 
 @each $bp in map-keys($breakpoints) {

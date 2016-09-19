@@ -1,8 +1,11 @@
 // @todo The underscore classes will be deprecated in the next major release
 
-/*
-    A layout for the sidebar quick links
-*/
+// stylelint-disable declaration-no-important
+// Necessary to override WebOne's default styling
+
+//
+// A layout for the sidebar quick links
+//
 
 .sidebar_icons,
 .sidebar-icons {
@@ -33,21 +36,21 @@
     }
 }
 
-/*
-    A layout for the social icons in the sidebar
-*/
+//
+// A layout for the social icons in the sidebar
+//
 
 .social_icons,
 .social-icons {
     text-align: center;
 
+    img {
+        margin-right: 10px;
+    }
+
     a:last-child {
         img {
             margin-right: 0 !important;
         }
-    }
-
-    img {
-        margin-right: 10px;
     }
 }

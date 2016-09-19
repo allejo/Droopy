@@ -1,17 +1,17 @@
 $colors: (
-    "red": #D00D2D
+    'red': #d00d2d
 );
 
 a.droopy-btn {
-    color: #FFFFFF;
+    color: #ffffff;
 }
 
 .droopy-btn {
     border-radius: 5px;
-    color: #FFFFFF;
+    color: #ffffff;
     display: inline-block;
     line-height: 1.5;
-    padding: .375rem 1rem;
+    padding: 0.375rem 1rem;
     text-decoration: none;
 
     @each $name, $value in $colors {

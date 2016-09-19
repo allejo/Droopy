@@ -1,9 +1,12 @@
+// stylelint-disable declaration-no-important
+// Needed to override WebOne's styling
+
 $spacer: 15px;
 
 @each $space in (padding, margin) {
-	@each $location in (top, right, bottom, left) {
-		.droopy-#{$space}-#{$location} {
-			#{$space}-#{$location}: $spacer !important;
-		}
-	}
+    @each $location in (top, right, bottom, left) {
+        .droopy-#{$space}-#{$location} {
+            #{$space}-#{$location}: $spacer !important;
+        }
+    }
 }

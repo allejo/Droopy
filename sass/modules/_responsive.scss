@@ -93,7 +93,7 @@ $breakpoint-intervals: (
 ///           display: block;
 ///       }
 ///   }
-   
+
 @mixin respond-down($breakpoint) {
     $lastBreakpoint: get-last-key($breakpoints);
 
@@ -114,15 +114,21 @@ $breakpoint-intervals: (
 
 @mixin respond-to($device) {
     @if ($device == phones) {
-        @media only screen and (max-width: 30em) { @content; }
+        @media only screen and (max-width: 30em) {
+            @content;
+        }
     }
     @else if ($device == phablets) {
-        @media only screen and (max-width: 45em) { @content; }
+        @media only screen and (max-width: 45em) {
+            @content;
+        }
     }
     @else if ($device == tablets) {
-        @media only screen and (max-width: 60em) { @content; }
+        @media only screen and (max-width: 60em) {
+            @content;
+        }
     }
     @else if ($device == desktops) {
-    	@content;
+        @content;
     }
 }

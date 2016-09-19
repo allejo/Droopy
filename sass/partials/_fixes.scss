@@ -1,3 +1,6 @@
+// stylelint-disable selector-max-compound-selectors, declaration-no-important
+// Necessary to override WebOne's styling
+
 //
 // Fix mobile tablets with weird navigation bar
 //
@@ -16,7 +19,8 @@
 //
 
 .layout-csun--sidebar-left.sidebar {
-    .panel-separator:nth-last-child(2), .pane-bundle-side-block:last-child {
+    .panel-separator:nth-last-child(2),
+    .pane-bundle-side-block:last-child {
         display: none;
     }
 }
