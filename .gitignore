@@ -1,6 +1,7 @@
 # Generated Files
 .sass-cache
 *.sublime-workspace
+*.map
 
 # OS Generated Files
 .DS_Store
