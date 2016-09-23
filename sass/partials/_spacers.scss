@@ -8,5 +8,9 @@ $spacer: 15px;
         .droopy-#{$space}-#{$location} {
             #{$space}-#{$location}: $spacer !important;
         }
+
+        .droopy-#{$space}-#{$location}--2x {
+            #{$space}-#{$location}: ($spacer * 2) !important;
+        }
     }
 }
