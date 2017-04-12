@@ -25,3 +25,10 @@ a.droopy-btn {
         }
     }
 }
+
+.field-name-field-event-registration a {
+    @extend .droopy-btn;
+    @extend .droopy-btn-red;
+
+    font-size: 1rem;
+}
