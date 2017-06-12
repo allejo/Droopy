@@ -8,7 +8,8 @@
 //
 
 .sidebar_icons,
-.sidebar-icons {
+.sidebar-icons,
+.droopy-sidebar_icons {
     @extend .droopy-row;
 
     margin-top: 10px;
@@ -27,11 +28,12 @@
 
     img {
         margin: 0 !important;
+        width: 65px;
     }
 
     p {
         font-size: 12px;
-        margin-top: 5px;
+        margin-top: 5px !important;
         text-transform: uppercase;
     }
 }
