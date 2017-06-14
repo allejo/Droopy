@@ -16,7 +16,6 @@ a.droopy-btn {
     text-decoration: none;
 
     @each $name, $value in $colors {
-        &.droopy-btn-#{$name}, // @todo Deprecated
         &.droopy-btn--#{$name} {
             background-color: $value;
 
@@ -29,7 +28,7 @@ a.droopy-btn {
 
 .field-name-field-event-registration a {
     @extend .droopy-btn;
-    @extend .droopy-btn-red;
+    @extend .droopy-btn--red;
 
     font-size: 1rem;
 }
