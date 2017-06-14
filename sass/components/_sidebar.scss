@@ -7,8 +7,6 @@
 // A layout for the sidebar quick links
 //
 
-.sidebar_icons,
-.sidebar-icons,
 .droopy-sidebar_icons {
     @extend .droopy-row;
 
@@ -42,8 +40,7 @@
 // A layout for the social icons in the sidebar
 //
 
-.social_icons,
-.social-icons {
+.droopy-social_icons {
     text-align: center;
 
     img {

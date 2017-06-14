@@ -16,7 +16,7 @@ a.droopy-btn {
     text-decoration: none;
 
     @each $name, $value in $colors {
-        &.droopy-btn-#{$name},
+        &.droopy-btn-#{$name}, // @todo Deprecated
         &.droopy-btn--#{$name} {
             background-color: $value;
 

@@ -1,18 +1,18 @@
-.droopy-img-fluid {
+.droopy-img--fluid {
     display: block;
     height: auto;
     max-width: 100%;
 }
 
-.droopy-img-rounded {
+.droopy-img--rounded {
     border-radius: 5px;
 }
 
-.droopy-img-circle {
+.droopy-img--circle {
     border-radius: 50%;
 }
 
-.droopy-img-thumbnail {
+.droopy-img--thumbnail {
     background-color: #ffffff;
     border: 1px solid #dddddd;
     border-radius: 0.25rem;
