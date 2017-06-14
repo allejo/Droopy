@@ -2,7 +2,6 @@
 // The droopy-album-text* classes have been renamed to droopy-media-object*
 //
 
-.droopy-album-text,
 .droopy-media-object {
     @extend %clearfix;
 
@@ -14,14 +13,14 @@
     }
 }
 
-.droopy-album-text--left .droopy-album-image,
+.droopy-album-text--left .droopy-album-image, // @todo Deprecated
 .droopy-media-object--left .droopy-media-object-image {
     @include respond-up(md) {
         margin-right: 15px;
     }
 }
 
-.droopy-album-text--right .droopy-album-image,
+.droopy-album-text--right .droopy-album-image, // @todo Deprecated
 .droopy-media-object--right .droopy-media-object-image {
     @include respond-up(md) {
         margin-left: 15px;

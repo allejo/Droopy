@@ -118,3 +118,7 @@ $spacer: 15px;
 .droopy-sr-only__element {
     @extend .droopy-sr-only--element;
 }
+
+.droopy-album-text {
+    @extend .droopy-media-object;
+}
