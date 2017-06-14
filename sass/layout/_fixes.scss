@@ -49,6 +49,12 @@
     }
 }
 
+.menu-block-wrapper > .menu {
+    > li:last-of-type a {
+        border-bottom: none;
+    }
+}
+
 .sidebar .panel-pane.pane-menu-tree {
     padding: 0;
 
