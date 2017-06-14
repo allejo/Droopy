@@ -1,8 +1,8 @@
 # Droopy
 
-Droopy is a project started and maintained by AS Marketing for experimenting with client side features that may be proposed to the WebOne project, CSUN's Drupal fork. This project consists of a JavaScript and a CSS file that is used to inject new features into WebOne websites.
+Droopy is a project started and maintained by AS Marketing that adds client-side workarounds to problems that WebOne won't solve. In addition, this project contains a list of utility CSS classes to assist with working on "Full HTML" pages; all classes are prefixed with `.droopy-` to avoid conflicts.
 
-**Warning**: Since this tools relies on JavaScript injections, this project requires that JavaScript is enabled in your browsers.
+**Warning**: Since this tools relies on JavaScript injections, this project requires that JavaScript is enabled in browsers.
 
 ## Installation
 
@@ -23,7 +23,7 @@ Droopy is a project started and maintained by AS Marketing for experimenting wit
 
 ### Droopy Calendar
 
-**Difficulty:** Easy  
+**Difficulty:** Easy
 **Demo:** On the Associated Students [calendar](http://www.csun.edu/as/calendar) page, a Droopy calendar is used.
 
 Calendars in WebOne may be embedded into pages easily but when navigating from month to month, the page requires to be reloaded or navigate away from the existing page. As an alternative, Droopy provides it's own calendar which can be embedded inside of a page an will updated as if it were in an iframe.
@@ -39,7 +39,7 @@ Add the following code snippet into your Full HTML page and your group's calenda
 
 ### Droopy Events by Tag
 
-**Difficulty:** Easy  
+**Difficulty:** Easy
 **Demo:** This option is used on the [Sport Clubs](http://www.csun.edu/as/sport-clubs) page to list their upcoming events.
 
 WebOne does not have a "Calendar by Tag" node that lists events containing to a specific tag. This Droopy feature looks for elements with the `.droopy-ebt` class and requires the `data-tag` with its value being the ID of the specific tag. That's it!
@@ -47,6 +47,7 @@ WebOne does not have a "Calendar by Tag" node that lists events containing to a 
 ```html
 <div class="droopy-ebt" data-tag="6546" aria-live="polite" aria-relevant="additions"></div>
 ```
+
 
 ### Jump to Accordion
 
@@ -90,10 +91,10 @@ URL hash:            #Fine_tune-your-page
 
 #### Demo
 
-On the Associated Students [administration](http://www.csun.edu/as/administration) page, there is an accordion tab called "Business Card Order Form" so that will translate to "#Business-Card-Order-Form"
+On the Associated Students [administration](http://www.csun.edu/as/administration) page, there is an accordion tab called "Human Resources Forms and Other Documents" so that will translate to "#Human-Resources-Forms-and-Other-Documents"
 
 URL
 
 ```
-http://www.csun.edu/as/administration#Business-Card-Order-Form
+https://www.csun.edu/as/administration#Human-Resources-Forms-and-Other-Documents
 ```
