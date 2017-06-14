@@ -4,11 +4,16 @@ Droopy provides CSS classes for general use to make mobile responsiveness simple
 
 ## Responsive Classes
 
-Droopy's grid system and it's respective classes.
+Defined in: `_grid.scss`
+
+Droopy's grid system and its respective classes.
 
 ```css
 .droopy-row {}
-.droopy-col-<1-12>-<desktops|tablets|phablets|phone> {}
+.droopy-col-<xs|sm|md|lg>-<1-12> {}
+.droopy-offset-<xs|sm|md|lg>-<1-12> {}
+.droopy-reset-<xs|sm|md|lg> {}
+.droopy-pull-<xs|sm|md|lg>-<left|right> {}
 ```
 
 ## Grids
@@ -51,12 +56,37 @@ An accordion that looks identical to WebOne's with the exception it doesn't expa
 </div>
 ```
 
+## Spacing
+
+CSS utility functions that will set the margin or padding of an element based on a mulitplier (0, 1, 2, or 3).
+
+**CSS**
+
+```css
+.droopy-<m|p><0|1|2|3>[-<sm|md|lg>] {}
+.droopy-<m|p>t<0|1|2|3>[-<sm|md|lg>] {}
+.droopy-<m|p>r<0|1|2|3>[-<sm|md|lg>] {}
+.droopy-<m|p>b<0|1|2|3>[-<sm|md|lg>] {}
+.droopy-<m|p>l<0|1|2|3>[-<sm|md|lg>] {}
+.droopy-<m|p>x<0|1|2|3>[-<sm|md|lg>] {}
+.droopy-<m|p>y<0|1|2|3>[-<sm|md|lg>] {}
+```
+
+- `m` - margin
+- `p` - padding
+- `t` - top
+- `r` - right
+- `b` - bottom
+- `l` - left
+- `x` - x-axis (right + left)
+- `y` - y-axis (top + bottom)
+
 ## Alignment
 
 Align the text of an element based
 
 ```css
-.droopy-text-<left|center|right>-<desktops|tablets|phablets|phone> {}
+.droopy-text-<left|center|right>-<xs|sm|md|lg> {}
 ```
 
 ## Buttons
@@ -65,15 +95,7 @@ Droopy style buttons
 
 ```css
 .droopy-btn {}
-    &.droopy-btn-red {};
-```
-
-## Spacing
-
-Add a uniform amount of margin or padding of 15px.
-
-```css
-.droopy-<margin|padding>-<top|right|bottom|left> {}
+    &.droopy-btn--red {};
 ```
 
 ## Calendar Icon
@@ -99,10 +121,51 @@ time.droopy-cal {}
 ## Blockquote
 
 ```html
-<blockquote class="tile">
+<blockquote class="droopy-blockquote">
     <p>
         Some meaningful quote
     </p>
     <footer>Author</footer>
 </blockquote>
+```
+
+## Accessibility
+
+Utility classes which hide text or elements for regular users but ensures that it's still available to screenreaders.
+
+```css
+.droopy-sr-only--text {}
+.droopy-sr-only--element
+```
+
+## Forms
+
+Styling for forms on WebOne
+
+```css
+.droopy-form-group {}
+.droopy-form-group .required {}
+```
+
+## Image Modifiers
+
+```css
+.droopy-img--fluid {}
+.droopy-img--rounded {}
+.droopy-img--circle {}
+.droopy-img--thumbnail {}
+```
+
+## Text Colors
+
+```css
+.droopy-text--red {}
+```
+
+## Media Objects
+
+```css
+.droopy-media-object {}
+.droopy-media-object--left .droopy-media-object-image {}
+.droopy-media-object--right .droopy-media-object-image {}
 ```
