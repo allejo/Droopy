@@ -59,6 +59,7 @@ $spacer: 15px;
             @extend %droopy-column;
 
             @include respond-to($device) {
+                float: left;
                 width: percentage($i / $columnCount);
             }
         }
