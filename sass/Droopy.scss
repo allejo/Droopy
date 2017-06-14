@@ -1,24 +1,28 @@
-@import 'modules/variables';
+@import 'abstracts/variables';
 
-@import 'modules/responsive';
-@import 'modules/clearfix';
+// Droopy functions
+@import 'abstracts/responsive';
+@import 'abstracts/clearfix';
 
-@import 'partials/grid';
+// Droopy layout related stylesheets
+@import 'layout/fixes';
+@import 'layout/grid';
 
-@import 'partials/fixes';
+// Droopy components
+@import 'components/accordion';
+@import 'components/blockquote';
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/media-object';
+@import 'components/sidebar';
+@import 'components/time';
+@import 'components/video';
 
-@import 'partials/accessibility';
-@import 'partials/accordion';
-@import 'partials/alignment';
-@import 'partials/blockquote';
-@import 'partials/buttons';
-@import 'partials/forms';
-@import 'partials/images';
-@import 'partials/media-object';
-@import 'partials/sidebar';
-@import 'partials/spacers';
-@import 'partials/time';
-@import 'partials/typography';
-@import 'partials/video';
+// Droopy utilities
+@import 'utilities/accessibility';
+@import 'utilities/alignment';
+@import 'utilities/images';
+@import 'utilities/spacers';
+@import 'utilities/typography';
 
 @import 'deprecated';

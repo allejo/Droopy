@@ -16,7 +16,8 @@ a.droopy-btn {
     text-decoration: none;
 
     @each $name, $value in $colors {
-        &.droopy-btn-#{$name} {
+        &.droopy-btn-#{$name},
+        &.droopy-btn--#{$name} {
             background-color: $value;
 
             &:hover {
