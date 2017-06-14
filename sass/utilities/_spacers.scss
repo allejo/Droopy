@@ -1,16 +1,29 @@
-// stylelint-disable declaration-no-important
-// Needed to override WebOne's styling
+// -----------------------------------------------------------------------------
+// Generate helper classes for margin, padding, and borders
+//
+// Courtesy of:
+//   https://github.com/allejo/bzion/blob/master/web/assets/css/utilities/_axes.scss
+// -----------------------------------------------------------------------------
 
-$spacer: 15px;
+$spacers: (
+    0: 0,
+    1: 5px,
+    2: 15px,
+    3: 30px,
+);
 
-@each $space in (padding, margin) {
-    @each $location in (top, right, bottom, left) {
-        .droopy-#{$space}-#{$location} {
-            #{$space}-#{$location}: $spacer !important;
+@each $bp in map-keys($breakpoints) {
+    @include respond-up($bp) {
+        $infix: if($bp == 'xs', '', '-' + $bp);
+
+        // Build margin and padding helpers
+        @each $prop, $abbrev in (margin: m, padding: p) {
+            @each $size, $length in $spacers {
+                @include build-axes($abbrev, $size, $prop, $infix, $length);
+            }
         }
 
-        .droopy-#{$space}-#{$location}--2x {
-            #{$space}-#{$location}: ($spacer * 2) !important;
-        }
+        // Some special margin utils
+        @include build-axes(m, $infix, margin, '-auto', auto);
     }
 }

@@ -1,5 +1,19 @@
 // @todo Deprecate these classes as they have been replaced by the classes above
 
+$spacer: 15px;
+
+@each $space in (padding, margin) {
+    @each $location in (top, right, bottom, left) {
+        .droopy-#{$space}-#{$location} {
+            #{$space}-#{$location}: $spacer !important;
+        }
+
+        .droopy-#{$space}-#{$location}--2x {
+            #{$space}-#{$location}: ($spacer * 2) !important;
+        }
+    }
+}
+
 @each $device in $devices {
     @for $i from 1 through $columnCount {
         .droopy-col-#{$i}-#{$device} {
