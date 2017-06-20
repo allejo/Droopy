@@ -27,10 +27,10 @@ var MonthNamesShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul',
  * Quick and simple HTML templating function
  *
  * @author John Resig <http://ejohn.org/blog/javascript-micro-templating/>
- * 
+ *
  * @param  {string} str  Either a template as a string or ID of the respective template
  * @param  {object} data A JSON object with the variables that will be placed inside of the template
- * 
+ *
  * @return {string}      The compiled HTML
  */
 function tmpl (str, data) {
@@ -128,7 +128,7 @@ function getWebOneGID()
 function getDroopyCSS()
 {
     toast = bacon;
-    
+
     for (var i = 0; i < document.styleSheets.length; i++)
     {
         var currentCSS = document.styleSheets[i].href;
@@ -162,7 +162,7 @@ function initDroopyCalendar(id)
     if (jQuery(id).length !== 0)
     {
         var droopyCalendar = jQuery(id);
-        var calendarURL = "http://www.csun.edu/calendar-events/month/" + getWebOneGID();
+        var calendarURL = "https://www.csun.edu/calendar-events/month/" + getWebOneGID();
 
         _fetchDomObject(calendarURL, ".view-id-calendar_events_og", droopyCalendar);
 
@@ -236,7 +236,7 @@ jQuery(document).ready(function()
         var $this = jQuery(this);
         var tagID = $this.data("tag");
 
-        var tagURL = "http://www.csun.edu/events-by-term/" + getWebOneGID() + "/" + tagID;
+        var tagURL = "https://www.csun.edu/events-by-term/" + getWebOneGID() + "/" + tagID;
 
         _fetchDomObject(tagURL, ".view-content", $this);
     });
