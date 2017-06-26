@@ -80,7 +80,7 @@
     }
 }
 
-.droopy-3x3-grid {
+.droopy-3x3-grid--skinny {
     @include respond-up(md) {
         @include respond-down(lg) {
             .tile:nth-child(2n+1) {
