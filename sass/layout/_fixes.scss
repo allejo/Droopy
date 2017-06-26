@@ -26,6 +26,48 @@
 }
 
 //
+// Make news article listings somewhat prettier
+//
+
+.view-display-id-panel_pane_news .view-content .views-row,
+.view-id-featured_events_by_group_id .view-content .views-row {
+
+    // The actual container for the News article
+    article {
+
+    }
+
+    // The headr of the article which contains title and date
+    header {
+        margin-bottom: 10px;
+
+        @include respond-up(md) {
+            margin-bottom: 0;
+            margin-left: 105px;
+        }
+
+        h2 {
+            margin-bottom: -5px;
+        }
+    }
+
+    figure {
+        @include respond-up(md) {
+            margin-top: -40px;
+        }
+    }
+
+    // Increase the specificity value to override WebOne
+    div.field-name-field-lede {
+        margin-left: 105px;
+    }
+
+    .field .read-more {
+        float: right;
+    }
+}
+
+//
 // CSS rules to fix random issues
 //
 
