@@ -7,8 +7,9 @@ a.droopy-btn {
 }
 
 .droopy-btn {
-    border: 0;
+    border: 1px solid transparent;
     border-radius: 5px;
+    box-sizing: border-box;
     color: #ffffff;
     display: inline-block;
     line-height: 1.5;
@@ -22,6 +23,12 @@ a.droopy-btn {
 
             &:hover {
                 background-color: darken($value, 5%);
+            }
+
+            &.droopy-btn--hollow:not(:hover) {
+                background-color: transparent;
+                border: 1px solid $value;
+                color: $value;
             }
         }
     }
