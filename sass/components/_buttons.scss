@@ -22,8 +22,14 @@ a.droopy-btn {
         &.droopy-btn--#{$name} {
             background-color: $value;
 
+            &:focus,
             &:hover {
                 background-color: darken($value, 5%);
+            }
+
+            &:focus {
+                border: 1px solid #4195fc;
+                box-shadow: 0px 0px 5px #4195fc;
             }
 
             &.droopy-btn--hollow:not(:hover) {
