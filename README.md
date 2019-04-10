@@ -54,7 +54,7 @@ WebOne does not have a "Calendar by Tag" node that lists events containing to a 
 <div class="droopy-ebt" data-tag="6546" aria-live="polite" aria-relevant="additions"></div>
 ```
 
-### Jump to Accordion
+### Jump to Accordion (Deprecated)
 
 > :warning: Deprecated :warning:
 >
