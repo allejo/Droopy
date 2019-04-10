@@ -18,12 +18,13 @@ Droopy is a project started and maintained by AS Marketing that adds client-side
 ## Available Features
 
 - [Droopy Calendar](#droopy-calendar)
-- [Droopy Events by Tag](#droopy-calendar-by-tag)
-- [Jump to Accordion](#jump-to-accordion)
+- [Droopy Events by Tag (Deprecated)](#droopy-calendar-by-tag)
+- [Jump to Accordion (Deprecated)](#jump-to-accordion)
 
 ### Droopy Calendar
 
 **Difficulty:** Easy
+
 **Demo:** On the Associated Students [calendar](http://www.csun.edu/as/calendar) page, a Droopy calendar is used.
 
 Calendars in WebOne may be embedded into pages easily but when navigating from month to month, the page requires to be reloaded or navigate away from the existing page. As an alternative, Droopy provides it's own calendar which can be embedded inside of a page an will updated as if it were in an iframe.
@@ -37,9 +38,14 @@ Add the following code snippet into your Full HTML page and your group's calenda
 ```
 
 
-### Droopy Events by Tag
+### Droopy Events by Tag (Deprecated)
+
+> :warning: Deprecated :warning:
+>
+> This feature has been implemented natively within Web-One as a View. It is called "(Beta) Show Events with Tag" and is available under the "Calendar" section of panelizer.
 
 **Difficulty:** Easy
+
 **Demo:** This option is used on the [Sport Clubs](http://www.csun.edu/as/sport-clubs) page to list their upcoming events.
 
 WebOne does not have a "Calendar by Tag" node that lists events containing to a specific tag. This Droopy feature looks for elements with the `.droopy-ebt` class and requires the `data-tag` with its value being the ID of the specific tag. That's it!
@@ -48,8 +54,16 @@ WebOne does not have a "Calendar by Tag" node that lists events containing to a 
 <div class="droopy-ebt" data-tag="6546" aria-live="polite" aria-relevant="additions"></div>
 ```
 
-
 ### Jump to Accordion
+
+> :warning: Deprecated :warning:
+>
+> This feature has been implemented natively within Web-One but with different behavior. All hashes are generated with the name of the accordion but with spaces stripped out. e.g.
+>
+> ```
+> Accordion Tab Title: Accordion Header 1
+> URL hash:            #AccordionHeader1
+> ```
 
 **Difficulty:** Easy
 
